@@ -1,0 +1,2751 @@
+{
+  "Sopas": [
+    {
+      "nombre": "Sopa de Espinaca",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Espinaca"
+      ]
+    },
+    {
+      "nombre": "Sopa Mexicana de Pollo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Chile chipotle",
+        "Crema agria",
+        "Queso",
+        "Aguacate",
+        "Pico de gallo",
+        "Tortilla mexicana"
+      ]
+    },
+    {
+      "nombre": "Sopa de Lentejas",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Lentejas",
+        "Champiñones",
+        "Portobello",
+        "Especias"
+      ]
+    },
+    {
+      "nombre": "Sopa Covarachía",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Tomate",
+        "Maíz",
+        "Plátano",
+        "Aguacate",
+        "Crema agria",
+        "Cilantro"
+      ]
+    },
+    {
+      "nombre": "Sopa del Sol",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Zapallo",
+        "Queso de cabra",
+        "Pesto",
+        "Pan pita",
+        "Cilantro"
+      ]
+    },
+    {
+      "nombre": "Sopa Vida en Verdes",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Vegetales variados",
+        "Maíz tierno"
+      ]
+    },
+    {
+      "nombre": "Sopa Soy Otoño (vegana)",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Vegetales variados",
+        "Frijoles"
+      ]
+    },
+    {
+      "nombre": "Sopa Covarachía Vegana",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Tomate",
+        "Maíz",
+        "Plátano",
+        "Aguacate",
+        "Crema agria vegana",
+        "Cilantro"
+      ]
+    }
+  ],
+  "Sándwiches": [
+    {
+      "nombre": "Sandwich Burger",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res",
+        "Cerdo",
+        "Queso mozzarella",
+        "Tocineta",
+        "Lechuga batavia",
+        "Tomate",
+        "Pepinillos",
+        "Salsa BBQ",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sandwich Ropa Vieja",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res desmechada",
+        "Queso amarillo",
+        "Lechuga",
+        "Tomate",
+        "Pimentón",
+        "Apio",
+        "Mostaza",
+        "Salsa BBQ",
+        "Pasta de tomate",
+        "Cebolla roja"
+      ]
+    },
+    {
+      "nombre": "Sándwich Cordero",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cordero",
+        "Cerdo",
+        "Queso mozzarella",
+        "Lechuga batavia",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Costilla",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Costilla de cerdo",
+        "Salsa BBQ",
+        "Maíz tierno",
+        "Queso mozzarella",
+        "Lechuga",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Especial",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Jamonada",
+        "Cordero",
+        "Res",
+        "Queso mozzarella",
+        "Lechuga batavia",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Hawaiano",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Piña",
+        "Queso mozzarella",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "Sándwich Pavo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pechuga de pavo",
+        "Tocineta",
+        "Queso mozzarella",
+        "Lechuga",
+        "Salsa Qbano",
+        "Miel mostaza"
+      ]
+    },
+    {
+      "nombre": "Sándwich Pollo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pechuga de pollo desmechada",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "Sándwich Pollo Crunch",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pollo apanado",
+        "Miel mostaza",
+        "Tomate",
+        "Pepinillos",
+        "Queso mozzarella",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Qumbia",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res desmechada",
+        "Hogao",
+        "Plátano maduro",
+        "Chorizo de cerdo",
+        "Maíz tierno",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Roast Beef",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Roast beef",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga",
+        "Salsa BBQ",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich Súper Especial",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Jamonada",
+        "Cordero",
+        "Res",
+        "Salchichón",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga batavia",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Sándwich al Pastor",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Costilla de cerdo",
+        "Lechuga batavia",
+        "Hogao",
+        "Pasta de tomate",
+        "Piña asada",
+        "Pico de gallo",
+        "Cebolla blanca",
+        "Cilantro"
+      ]
+    },
+    {
+      "nombre": "Sándwich Vegetariano",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Champiñones frescos",
+        "Pimentón rojo",
+        "Cebolla roja",
+        "Queso mozzarella",
+        "Salsa Qbano"
+      ]
+    }
+  ],
+  "Hamburguesas": [
+    {
+      "nombre": "Hamburguesa Doble Carne",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res",
+        "Cerdo",
+        "Tocineta",
+        "Tomate",
+        "Cebolla",
+        "Salsa BBQ",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Hamburguesa Hawaiana",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res",
+        "Cerdo",
+        "Piña",
+        "Tocineta",
+        "Tomate",
+        "Cebolla",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Hamburguesa Pollo Apanado",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pollo apanado",
+        "Miel mostaza",
+        "Queso mozzarella",
+        "Tocineta",
+        "Tomate",
+        "Cebolla"
+      ]
+    },
+    {
+      "nombre": "Hamburguesa Tradicional",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res",
+        "Cerdo",
+        "Queso mozzarella",
+        "Tocineta",
+        "Tomate",
+        "Lechuga",
+        "Cebolla",
+        "Salsa BBQ"
+      ]
+    },
+    {
+      "nombre": "Hamburguesa Veggie",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Proteína vegetal",
+        "Champiñones frescos",
+        "Queso mozzarella",
+        "Salsa de queso cheddar"
+      ]
+    },
+    {
+      "nombre": "Hamburguesa de Pollo Desmechado",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pollo desmechado",
+        "Carne de res",
+        "Salsa BBQ",
+        "Tocineta",
+        "Tomate",
+        "Cebolla",
+        "Queso mozzarella"
+      ]
+    },
+    {
+      "nombre": "Big Boy",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Lechuga",
+        "Carne de res",
+        "Queso americano",
+        "Cebolla morada",
+        "Pepinillos",
+        "Semillas de mostaza",
+        "Mayonesa de la casa"
+      ]
+    },
+    {
+      "nombre": "Clásica",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan ajonjolí",
+        "Carne de res",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Salsa de tomate",
+        "Mostaza",
+        "Mayonesa de chipotle"
+      ]
+    },
+    {
+      "nombre": "Cheese Burger",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan ajonjolí",
+        "Carne de res",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Queso cheddar",
+        "Salsa de tomate",
+        "Mostaza",
+        "Mayonesa de chipotle"
+      ]
+    },
+    {
+      "nombre": "Cheese and Bacon",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan ajonjolí",
+        "Carne de res",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Queso cheddar",
+        "Tocineta",
+        "Salsa de tomate",
+        "Mostaza",
+        "Mayonesa de chipotle"
+      ]
+    },
+    {
+      "nombre": "Avocado",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Queso cheddar",
+        "Tocineta",
+        "Aguacate",
+        "Salsa chipotle",
+        "Salsa BBQ"
+      ]
+    },
+    {
+      "nombre": "Blue Cheese",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Lechuga",
+        "Tomate",
+        "Champiñones",
+        "Cebolla caramelizada",
+        "Queso azul"
+      ]
+    },
+    {
+      "nombre": "Gringa",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Tocineta",
+        "Lechuga",
+        "Tomate",
+        "Cebolla morada",
+        "Pepinillos",
+        "Queso cheddar",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "Peruana",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Guacamole",
+        "Lechuga",
+        "Tomate",
+        "Aguacate",
+        "Cebolla morada",
+        "Ají dulce",
+        "Ají amarillo",
+        "Jalapeño",
+        "Cilantro",
+        "Salsa criolla"
+      ]
+    },
+    {
+      "nombre": "New Philadelphia",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Lechuga romana",
+        "Lechuga hidropónica",
+        "Rúgula",
+        "Cebolla caramelizada",
+        "Queso crema",
+        "Nueces",
+        "Miel"
+      ]
+    },
+    {
+      "nombre": "Good Burger",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Queso costeño",
+        "Lechuga hidropónica",
+        "Cebolla morada",
+        "Mermelada de pimentón",
+        "Mayonesa de pimentón"
+      ]
+    },
+    {
+      "nombre": "New Royale",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan ajonjolí",
+        "Carne de res",
+        "Queso cheddar",
+        "Tocineta",
+        "Lechuga",
+        "Tomate",
+        "Cebolla",
+        "Champiñones salteados",
+        "Huevo",
+        "Salsa BBQ"
+      ]
+    },
+    {
+      "nombre": "Tropical",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Lechuga romana",
+        "Queso crema",
+        "Piña asada",
+        "Lechuga hidropónica",
+        "Queso costeño",
+        "Salsa de jengibre"
+      ]
+    },
+    {
+      "nombre": "Sriracha",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Chorizo argentino",
+        "Champiñones",
+        "Lechuga hidropónica",
+        "Cebollín",
+        "Queso mozzarella",
+        "Mayonesa de sriracha"
+      ]
+    },
+    {
+      "nombre": "New Mexico",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Queso cheddar",
+        "Lechuga",
+        "Tomate",
+        "Tortilla de maíz",
+        "Pico de gallo",
+        "Sour cream de jalapeño",
+        "Guacamole"
+      ]
+    },
+    {
+      "nombre": "La Sailor",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Lechuga hidropónica",
+        "Cebolla caramelizada",
+        "Queso crema",
+        "Tocineta",
+        "Salsa BBQ"
+      ]
+    },
+    {
+      "nombre": "Argentina",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Carne de res",
+        "Chorizo argentino",
+        "Lechuga",
+        "Tomate",
+        "Queso mozzarella",
+        "Cebolla",
+        "Chimichurri"
+      ]
+    },
+    {
+      "nombre": "L'Entrecot",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Carne de res",
+        "Salsa café de París",
+        "Queso mozzarella",
+        "Tomate"
+      ]
+    },
+    {
+      "nombre": "Happy Chicken",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Pechuga de pollo",
+        "Lechuga hidropónica",
+        "Lechuga romana",
+        "Tomate",
+        "Pesto",
+        "Queso mozzarella",
+        "Mayonesa de pesto"
+      ]
+    },
+    {
+      "nombre": "Crispy Chicken",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Pollo apanado",
+        "Queso crema feta",
+        "Lechuga romana",
+        "Pepinillos",
+        "Coleslaw",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "WTF! Burger (vegana)",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan brioche",
+        "Proteína vegetal",
+        "Lechuga hidropónica",
+        "Lechuga romana",
+        "Cebolla caramelizada",
+        "Queso mozzarella",
+        "Puerro",
+        "Nueces",
+        "Mayonesa de cerveza"
+      ]
+    },
+    {
+      "nombre": "Veggie",
+      "restaurante": "Chef Burger",
+      "ingredientes": [
+        "Pan campesino",
+        "Portobello",
+        "Lechuga",
+        "Calabacín",
+        "Pesto",
+        "Tomate",
+        "Queso mozzarella",
+        "Queso azul",
+        "Cebolla caramelizada"
+      ]
+    }
+  ],
+  "Wraps": [
+    {
+      "nombre": "Wrap Al Pastor",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Costilla de cerdo",
+        "Lechuga batavia",
+        "Hogao",
+        "Pasta de tomate",
+        "Piña asada",
+        "Pico de gallo",
+        "Cebolla blanca",
+        "Cilantro"
+      ]
+    },
+    {
+      "nombre": "Wrap Costilla",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Costilla de cerdo",
+        "Salsa BBQ",
+        "Maíz tierno",
+        "Queso mozzarella",
+        "Lechuga",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Wrap Especial",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Jamonada",
+        "Cordero",
+        "Res",
+        "Queso mozzarella",
+        "Lechuga batavia",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Wrap Hawaiano",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Piña",
+        "Queso mozzarella",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "Wrap Pollo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pechuga de pollo desmechada",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga",
+        "Mayonesa"
+      ]
+    },
+    {
+      "nombre": "Wrap Qumbia",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res desmechada",
+        "Hogao",
+        "Plátano maduro",
+        "Chorizo de cerdo",
+        "Maíz tierno",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Wrap Roast Beef",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Roast beef",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga",
+        "Salsa BBQ",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Wrap Ropa Vieja",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Carne de res desmechada",
+        "Queso amarillo",
+        "Lechuga",
+        "Tomate",
+        "Pimentón",
+        "Apio",
+        "Mostaza",
+        "Salsa BBQ",
+        "Pasta de tomate",
+        "Cebolla roja"
+      ]
+    },
+    {
+      "nombre": "Wrap Súper Especial",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Cerdo",
+        "Pollo",
+        "Jamonada",
+        "Cordero",
+        "Res",
+        "Salchichón",
+        "Tomate",
+        "Queso mozzarella",
+        "Lechuga batavia",
+        "Salsa Qbano"
+      ]
+    },
+    {
+      "nombre": "Wrap Vegetariano",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Champiñones frescos",
+        "Pimentón rojo",
+        "Cebolla roja",
+        "Queso mozzarella",
+        "Salsa Qbano"
+      ]
+    }
+  ],
+  "Bowls": [
+    {
+      "nombre": "Qbowl Costilla",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Arroz",
+        "Cilantro",
+        "Guacamole",
+        "Cebolla blanca",
+        "Tomate",
+        "Costilla desmechada",
+        "Piña"
+      ]
+    },
+    {
+      "nombre": "Qbowl Criollo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Arroz",
+        "Cilantro",
+        "Guacamole",
+        "Cebolla blanca",
+        "Tomate",
+        "Carne de res desmechada",
+        "Hogao",
+        "Chorizo",
+        "Frijoles"
+      ]
+    },
+    {
+      "nombre": "Qbowl Pollo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Arroz",
+        "Cilantro",
+        "Guacamole",
+        "Cebolla blanca",
+        "Tomate",
+        "Pollo desmechado",
+        "Hogao",
+        "Maíz"
+      ]
+    },
+    {
+      "nombre": "Qbowl Vegetariano",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Arroz",
+        "Cilantro",
+        "Guacamole",
+        "Cebolla blanca",
+        "Tomate",
+        "Champiñones",
+        "Maíz",
+        "Cebolla roja"
+      ]
+    }
+  ],
+  "Crepes de Pollo": [
+    {
+      "nombre": "Crepe de Pollo, Queso y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Queso",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo Trufa Mexicano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Huitlacoche",
+        "Aguacate",
+        "Salsa de queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo, Brócoli y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Brócoli",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo Peruano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Aceitunas moradas",
+        "Rúgula",
+        "Huevo"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo Mexicano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Salsa mexicana",
+        "Chipotle",
+        "Queso rallado",
+        "Lechuga",
+        "Crema agria",
+        "Ají",
+        "Pico de gallo"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo Thai",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Portobello",
+        "Curry",
+        "Maracuyá"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo Rosarito",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Salsa mexicana",
+        "Chipotle",
+        "Aguacate",
+        "Frijoles"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo al Curry Hindú",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Curry",
+        "Maní",
+        "Uvas pasas",
+        "Chutney de mango"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo al Ají Panka",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Ají panka"
+      ]
+    },
+    {
+      "nombre": "Crepe Pollo Chipotle",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Chipotle",
+        "Aguacate",
+        "Pico de gallo",
+        "Queso",
+        "Maíz tostado"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pollo en Salsa Verde",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Tomatillo verde",
+        "Queso",
+        "Crema agria",
+        "Pimentón asado",
+        "Cilantro"
+      ]
+    }
+  ],
+  "Crepes de Carne": [
+    {
+      "nombre": "Crepe de Boloñesa y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Carne boloñesa",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Boloñesa, Queso y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Carne boloñesa",
+        "Queso",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe de Boloñesa, Jamón y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Carne boloñesa",
+        "Jamón",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Stroganoff",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Lomo de res",
+        "Champiñones",
+        "Salsa stroganoff"
+      ]
+    },
+    {
+      "nombre": "Crepe de Lomito Pimienta",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Lomo de res",
+        "Salsa a la pimienta"
+      ]
+    },
+    {
+      "nombre": "Crepe de Ternera",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Ternera"
+      ]
+    },
+    {
+      "nombre": "Crepe de Ternera y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Ternera",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe Mexicano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Carne boloñesa",
+        "Salsa mexicana",
+        "Queso rallado",
+        "Lechuga",
+        "Crema agria",
+        "Ají",
+        "Pico de gallo"
+      ]
+    },
+    {
+      "nombre": "Crepe de Lomo Árabe",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Lomo de res",
+        "Especias árabes",
+        "Ensalada árabe"
+      ]
+    },
+    {
+      "nombre": "Crepe Sombrero Vueltiao",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Carne desmechada",
+        "Hogao",
+        "Plátano maduro",
+        "Crema agria",
+        "Aguacate",
+        "Pico de gallo"
+      ]
+    },
+    {
+      "nombre": "Crepe de Roastbeef",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Roast beef",
+        "Queso",
+        "Cebolla asada",
+        "Rúgula",
+        "Mayonesa chipotle",
+        "Cebolla encurtida"
+      ]
+    },
+    {
+      "nombre": "Crepe de Cochinita Pibil",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Cerdo desmechado",
+        "Cítricos",
+        "Aguacate",
+        "Pico de gallo",
+        "Cebolla encurtida",
+        "Crema agria"
+      ]
+    }
+  ],
+  "Crepes de Mar": [
+    {
+      "nombre": "Crepe de Cangrejo Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Palmitos de cangrejo",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "Crepe de Cangrejo al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Palmitos de cangrejo",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "Crepe de Calamares Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Calamares",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "Crepe de Calamares al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Calamares",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "Crepe de Camarones al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "Crepe de Camarones Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "Crepe de Camarones al Ajillo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Salsa al ajillo"
+      ]
+    },
+    {
+      "nombre": "Crepe Salmon Roll",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón ahumado",
+        "Rúgula",
+        "Queso crema",
+        "Mostaza",
+        "Cebolla",
+        "Aguacate",
+        "Vegetales frescos",
+        "Ensalada verde"
+      ]
+    },
+    {
+      "nombre": "Crepe de Camarones Rosarito",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Chipotle",
+        "Aguacate",
+        "Frijoles rojos"
+      ]
+    },
+    {
+      "nombre": "Crepe Mar Encocado",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pulpo",
+        "Camarones",
+        "Calamares",
+        "Langostinos",
+        "Quinua negra",
+        "Salsa de coco",
+        "Coco crujiente"
+      ]
+    },
+    {
+      "nombre": "Crepe Zeus",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón ahumado",
+        "Aguacate",
+        "Cebolla encurtida",
+        "Crema agria",
+        "Aceitunas moradas",
+        "Germinados"
+      ]
+    },
+    {
+      "nombre": "Salmón Ahumado",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón ahumado",
+        "Crema agria",
+        "Queso crema",
+        "Cebollín",
+        "Lechuga",
+        "Vinagreta de hierbas"
+      ]
+    }
+  ],
+  "Crepes Clásicos": [
+    {
+      "nombre": "French Connection",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Jamón ahumado",
+        "Queso ricotta",
+        "Syrup"
+      ]
+    },
+    {
+      "nombre": "Crepe de Jamón y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Jamón",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Jamón, Queso y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Jamón",
+        "Queso",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe de Pavo y Queso Holandés",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pechuga de pavo",
+        "Queso holandés",
+        "Salsa dijonnaise"
+      ]
+    },
+    {
+      "nombre": "Crepe Sensación",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Jamón ahumado",
+        "Queso tipo sabana",
+        "Huevo"
+      ]
+    }
+  ],
+  "Crepes Vegetarianos": [
+    {
+      "nombre": "Crepe Poblana",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Quesos variados",
+        "Aguacate",
+        "Pico de gallo",
+        "Crema agria",
+        "Lechuga",
+        "Ají"
+      ]
+    },
+    {
+      "nombre": "Crepe Normanda",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Champiñones frescos",
+        "Quesos variados",
+        "Salsa de champiñones"
+      ]
+    },
+    {
+      "nombre": "Crepe Toscana",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Queso",
+        "Tomate",
+        "Albahaca",
+        "Champiñones frescos",
+        "Salsa de champiñones",
+        "Salsa napolitana"
+      ]
+    },
+    {
+      "nombre": "Crepe Caprino",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Champiñones salteados",
+        "Tomate seco",
+        "Tomate fresco",
+        "Pesto",
+        "Vinagre balsámico",
+        "Mozzarella",
+        "Nueces"
+      ]
+    },
+    {
+      "nombre": "Crepe Romana",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mozzarella de búfala",
+        "Salsa napolitana",
+        "Albahaca",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Crepe Sicilia",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mozzarella de búfala",
+        "Tomate seco",
+        "Tomate fresco",
+        "Albahaca"
+      ]
+    },
+    {
+      "nombre": "Crepe Montes de María",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Frijoles rojos",
+        "Tofu",
+        "Tahini",
+        "Guacamole",
+        "Rúgula",
+        "Lentejas tostadas"
+      ]
+    },
+    {
+      "nombre": "Crepe de Champiñones, Alcachofa y Queso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Champiñones",
+        "Alcachofa",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Crepe de Champiñones al Ajillo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Champiñones",
+        "Salsa al ajillo"
+      ]
+    }
+  ],
+  "Crepes Veganos": [
+    {
+      "nombre": "Crepe Montes de María Vegano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Frijoles rojos",
+        "Tofu",
+        "Tahini",
+        "Guacamole",
+        "Tomate cherry",
+        "Rúgula",
+        "Lentejas tostadas"
+      ]
+    },
+    {
+      "nombre": "Crepe Vegan Boloñesa",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Tofu",
+        "Espinaca",
+        "Berenjena",
+        "Champiñones",
+        "Tahini"
+      ]
+    },
+    {
+      "nombre": "Crepe Sombrero Vueltiao Vegano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Orellanas",
+        "Plátano maduro",
+        "Aguacate",
+        "Pico de gallo",
+        "Crema agria vegana"
+      ]
+    },
+    {
+      "nombre": "Pita En El Bosque",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan pita",
+        "Hongos variados",
+        "Espinaca",
+        "Cebolla asada",
+        "Peperoncino",
+        "Queso crema de almendras",
+        "Aceite de trufa"
+      ]
+    },
+    {
+      "nombre": "Ensalada Tofu Marroquí",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Couscous",
+        "Especias",
+        "Aguacate",
+        "Chutney de mango",
+        "Quinua tostada",
+        "Ensalada verde",
+        "Vinagreta marroquí"
+      ]
+    }
+  ],
+  "Panne Cook": [
+    {
+      "nombre": "PanneCook de Pollo al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Pollo",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Pollo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Pollo"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Pollo, Queso y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Pollo",
+        "Champiñones",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Pollo y Espárragos",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Pollo",
+        "Champiñones",
+        "Espárragos"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Stroganoff",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Lomo de res",
+        "Champiñones",
+        "Salsa stroganoff"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Lomito Pimienta",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Lomo de res",
+        "Salsa a la pimienta"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Cangrejo al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Palmitos de cangrejo",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Cangrejo Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Palmitos de cangrejo",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Calamares al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Calamares",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Calamares Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Calamares",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Camarones al Curry",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Camarones",
+        "Salsa curry"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Camarones al Ajillo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Camarones",
+        "Salsa al ajillo"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Camarones Marco Polo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Camarones",
+        "Salsa de la casa"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Ternera",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Ternera"
+      ]
+    },
+    {
+      "nombre": "PanneCook de Ternera y Champiñones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pan artesanal",
+        "Ternera",
+        "Champiñones"
+      ]
+    }
+  ],
+  "Ensaladas": [
+    {
+      "nombre": "Ensalada Mexicana",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Costilla de cerdo desmechada",
+        "Frijoles negros",
+        "Maíz tierno",
+        "Queso mozzarella",
+        "Guacamole",
+        "Pico de gallo",
+        "Lechuga batavia"
+      ]
+    },
+    {
+      "nombre": "Ensalada Pavo",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pechuga de pavo",
+        "Lechuga batavia",
+        "Miel mostaza",
+        "Maíz tierno",
+        "Tomate",
+        "Crutones",
+        "Tocineta"
+      ]
+    },
+    {
+      "nombre": "Ensalada Pollo BBQ",
+      "restaurante": "Qbano",
+      "ingredientes": [
+        "Pollo desmechado",
+        "Lechuga batavia",
+        "Salsa BBQ",
+        "Tomate",
+        "Queso mozzarella",
+        "Cebolla roja",
+        "Crutones"
+      ]
+    },
+    {
+      "nombre": "Ensalada Mediterránea",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Calamares",
+        "Pesto",
+        "Lechuga",
+        "Apio",
+        "Champiñones",
+        "Cebolla roja",
+        "Aceitunas negras",
+        "Vinagre balsámico",
+        "Aceite de oliva",
+        "Cebolla crocante"
+      ]
+    },
+    {
+      "nombre": "Ensalada Mediterránea Calamares",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Calamares",
+        "Pesto",
+        "Lechuga",
+        "Apio",
+        "Champiñones",
+        "Cebolla roja",
+        "Aceitunas negras",
+        "Vinagre balsámico",
+        "Aceite de oliva",
+        "Cebolla crocante"
+      ]
+    },
+    {
+      "nombre": "Ensalada Mediterránea Camarones",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Pesto",
+        "Lechuga",
+        "Apio",
+        "Champiñones",
+        "Cebolla roja",
+        "Aceitunas negras",
+        "Vinagre balsámico",
+        "Aceite de oliva",
+        "Cebolla crocante"
+      ]
+    },
+    {
+      "nombre": "Ensalada Florentina",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mozzarella de búfala",
+        "Lechuga",
+        "Tomate seco",
+        "Tomate fresco",
+        "Champiñones",
+        "Pesto",
+        "Aguacate",
+        "Aceitunas negras",
+        "Vinagre balsámico",
+        "Aceite de oliva"
+      ]
+    },
+    {
+      "nombre": "Ensalada Thai",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pechuga de pavo",
+        "Ajonjolí",
+        "Lechuga",
+        "Apio",
+        "Champiñones",
+        "Pimentón",
+        "Cebolla crocante",
+        "Vinagreta oriental"
+      ]
+    },
+    {
+      "nombre": "Ensalada Marroquí con Camarón",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Camarones",
+        "Couscous",
+        "Especias",
+        "Aguacate",
+        "Chutney de mango",
+        "Quinua tostada",
+        "Ensalada verde"
+      ]
+    },
+    {
+      "nombre": "Ensalada Pollo Marroquí",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Couscous",
+        "Especias",
+        "Aguacate",
+        "Chutney de mango",
+        "Quinua tostada",
+        "Ensalada verde"
+      ]
+    },
+    {
+      "nombre": "Ensalada César con Salmón",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón",
+        "Lechuga romana",
+        "Aderezo césar",
+        "Crutones",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Ensalada César con Pollo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Pollo",
+        "Lechuga romana",
+        "Aderezo césar",
+        "Crutones",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Ensalada César",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Lechuga romana",
+        "Aderezo césar",
+        "Crutones",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Ensalada Valparaíso",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón ahumado",
+        "Merkén",
+        "Quinua negra",
+        "Kale",
+        "Tomate",
+        "Aguacate"
+      ]
+    },
+    {
+      "nombre": "Ensalada Torina",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mozzarella de búfala",
+        "Jamón serrano",
+        "Cebolla caramelizada",
+        "Lechuga",
+        "Vinagreta de mostaza Dijón"
+      ]
+    },
+    {
+      "nombre": "Tuna Salad",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Atún",
+        "Lechuga",
+        "Pepino",
+        "Champiñones",
+        "Apio",
+        "Aguacate",
+        "Tomate cherry",
+        "Aceitunas negras",
+        "Vinagreta de hierbas",
+        "Aceite de oliva"
+      ]
+    },
+    {
+      "nombre": "Ensalada Montes de María",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Frijoles rojos",
+        "Tofu",
+        "Tahini",
+        "Guacamole",
+        "Rúgula",
+        "Lentejas tostadas"
+      ]
+    },
+    {
+      "nombre": "Ensalada Mikonos",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Salmón ahumado",
+        "Lechuga",
+        "Rúgula",
+        "Queso feta",
+        "Aceitunas negras",
+        "Champiñones",
+        "Cebolla roja",
+        "Albahaca",
+        "Tomate cherry",
+        "Pepino",
+        "Vinagreta de hierbas",
+        "Aceite de oliva"
+      ]
+    },
+    {
+      "nombre": "Ensalada Portofino",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Queso feta",
+        "Tomate seco",
+        "Lechuga",
+        "Rúgula",
+        "Albahaca",
+        "Aceitunas negras",
+        "Tomate fresco",
+        "Tomate cherry",
+        "Champiñones",
+        "Cebolla",
+        "Pesto",
+        "Vinagreta de hierbas",
+        "Aceite de oliva"
+      ]
+    },
+    {
+      "nombre": "Ensalada de la Casa",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Lechuga",
+        "Tomate cherry",
+        "Cebolla",
+        "Queso parmesano",
+        "Crutones",
+        "Balsámico en reducción"
+      ]
+    },
+    {
+      "nombre": "Ensalada César",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Lechuga",
+        "Crutones",
+        "Queso parmesano",
+        "Aderezo césar"
+      ]
+    }
+  ],
+  "Crepes Dulces": [
+    {
+      "nombre": "Crepe Baby Doll",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Banano",
+        "Helado de vainilla",
+        "Nueces",
+        "Chocolate caliente",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Crepe Cleopatra",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Banano",
+        "Fresa",
+        "Helado de mora",
+        "Crema chantilly",
+        "Salsa de frambuesa"
+      ]
+    },
+    {
+      "nombre": "Crepe Mont Blanc",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Chocolate blanco",
+        "Fresas",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Crepe Chocolate Fondue",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Chocolate fondue",
+        "Fresas",
+        "Banano",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Crepe de Nutella",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Nutella"
+      ]
+    },
+    {
+      "nombre": "Crepe de Nutella y Banano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Nutella",
+        "Banano"
+      ]
+    },
+    {
+      "nombre": "Crepe de Nutella y Fresas",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Nutella",
+        "Fresas"
+      ]
+    }
+  ],
+  "Waffles": [
+    {
+      "nombre": "Waffle Especial",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Helado",
+        "Crema chantilly",
+        "Salsas a elección"
+      ]
+    },
+    {
+      "nombre": "Waffle de Frutos del Bosque",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Frutos rojos",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Waffle de Mantequilla y Syrup",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Mantequilla",
+        "Syrup"
+      ]
+    },
+    {
+      "nombre": "Waffle de Arequipe",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Arequipe",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Waffle de Arequipe y Banano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Banano",
+        "Arequipe",
+        "Chocolate",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Waffle de Nutella",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Nutella",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Waffle de Nutella y Banano",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Nutella",
+        "Banano",
+        "Crema chantilly",
+        "Helado de vainilla"
+      ]
+    },
+    {
+      "nombre": "Waffle D'Choclo",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle de maíz",
+        "Queso mozzarella",
+        "Queso 7 cueros",
+        "Suero costeño"
+      ]
+    },
+    {
+      "nombre": "Waffle de Miel de Abejas",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Waffle",
+        "Mantequilla",
+        "Miel de abejas"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles de Arequipe",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Arequipe",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles de Frutos del Bosque",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Frutos rojos",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles de Nutella",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Nutella",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles de Chocolate",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Chocolate",
+        "Helado de vainilla",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Mini Waffle Tradicional",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Mantequilla",
+        "Syrup"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles de Miel de Abejas",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle",
+        "Mantequilla",
+        "Miel de abejas"
+      ]
+    },
+    {
+      "nombre": "Mini Waffles D'Yuca",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Mini waffle de yuca",
+        "Mantequilla",
+        "Panela",
+        "Jalea de guayaba"
+      ]
+    }
+  ],
+  "Helados y Copas": [
+    {
+      "nombre": "Copa Tentación",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Bizcochuelo",
+        "Licor",
+        "Helado de vainilla",
+        "Helado de café",
+        "Helado de chocolate",
+        "Chocolate",
+        "Nueces",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Copa Arequipe",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de arequipe",
+        "Banano",
+        "Arequipe",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Banana Split",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Helado de fresa",
+        "Helado de chocolate",
+        "Crema chantilly",
+        "Nueces",
+        "Banano",
+        "Barquillo",
+        "Chocolate",
+        "Arequipe"
+      ]
+    },
+    {
+      "nombre": "Copa Vainilla Hot Chocolate",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Almendras",
+        "Crema chantilly",
+        "Chocolate caliente"
+      ]
+    },
+    {
+      "nombre": "Copa Suprema",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Banano",
+        "Crema chantilly",
+        "Chocolate",
+        "Arequipe",
+        "Galleta",
+        "Nueces"
+      ]
+    },
+    {
+      "nombre": "Capricho de Maracuyá",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de yogur de maracuyá",
+        "Maracuyá",
+        "Fresas",
+        "Melocotón",
+        "Galleta"
+      ]
+    },
+    {
+      "nombre": "Copa Alaska",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Profiteroles",
+        "Salsa inglesa",
+        "Helado de vainilla",
+        "Helado de mora",
+        "Salsa de frambuesa",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Copa Dulce Encanto",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Bizcochuelo",
+        "Salsa inglesa",
+        "Arequipe",
+        "Helado de coco",
+        "Chocolate"
+      ]
+    },
+    {
+      "nombre": "Copa Dama Blanca",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Helado de chocolate",
+        "Chocolate",
+        "Nueces",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Copa Vesubio",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de fresa",
+        "Helado de vainilla",
+        "Helado de limón",
+        "Salsa de frambuesa",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Copa Merengue Glazé",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Merengue",
+        "Helado de vainilla",
+        "Chocolate",
+        "Nueces",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Copa Festival",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de mora",
+        "Helado de fresa",
+        "Helado de feijoa",
+        "Helado de limón",
+        "Helado de vainilla",
+        "Banano",
+        "Fresas",
+        "Bizcochuelo",
+        "Salsa de frambuesa",
+        "Crema chantilly",
+        "Barquillo"
+      ]
+    },
+    {
+      "nombre": "Copa Melocotón",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Helado de yogur de maracuyá",
+        "Melocotón",
+        "Maracuyá",
+        "Crema chantilly",
+        "Galleta"
+      ]
+    },
+    {
+      "nombre": "Copa Brownie",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de brownie",
+        "Caramelo",
+        "Chocolate"
+      ]
+    },
+    {
+      "nombre": "Copa Limeña",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Arequipe",
+        "Frutos rojos",
+        "Merengue",
+        "Guanábana"
+      ]
+    },
+    {
+      "nombre": "Copa Banana Royal",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Helado de chocolate",
+        "Fresa",
+        "Banano",
+        "Chocolate",
+        "Galleta",
+        "Crema chantilly"
+      ]
+    },
+    {
+      "nombre": "Filosofía Acaramelada",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Caramelo",
+        "Banano",
+        "Almendras"
+      ]
+    },
+    {
+      "nombre": "Tiramisú",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de vainilla",
+        "Bizcochuelo",
+        "Cognac",
+        "Salsa inglesa",
+        "Chocolate",
+        "Café"
+      ]
+    },
+    {
+      "nombre": "Tarta de Chocolate y Fudge",
+      "restaurante": "Crepes & Waffles",
+      "ingredientes": [
+        "Helado de chocolate",
+        "Helado de café",
+        "Fudge de chocolate",
+        "Almendras",
+        "Crocante italiano"
+      ]
+    }
+  ],
+  "Platos Montolivo": [
+    {
+      "nombre": "Pollo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pollo"
+      ]
+    },
+    {
+      "nombre": "Solomito",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Solomito de res"
+      ]
+    },
+    {
+      "nombre": "Cañón de Cerdo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Cañón de cerdo"
+      ]
+    },
+    {
+      "nombre": "Salmón",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Salmón"
+      ]
+    },
+    {
+      "nombre": "Pescado",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Filete de pescado",
+        "Limón"
+      ]
+    },
+    {
+      "nombre": "Tilapia",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Tilapia"
+      ]
+    },
+    {
+      "nombre": "Milanesa de Pollo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pollo apanado",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Cordon Bleu",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pollo",
+        "Jamón",
+        "Queso"
+      ]
+    },
+    {
+      "nombre": "Albóndigas",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Carne molida",
+        "Salsa de tomate"
+      ]
+    }
+  ],
+  "Pastas y Risottos": [
+    {
+      "nombre": "Alfredo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Crema de leche",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Carbonara",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Tocineta",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Pesto",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Pesto",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Pesto Rojo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Pesto de tomate seco",
+        "Alcaparras",
+        "Aceite de oliva"
+      ]
+    },
+    {
+      "nombre": "Napolitana",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa napolitana"
+      ]
+    },
+    {
+      "nombre": "Al Burro",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Mantequilla",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Boloñesa",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Carne boloñesa",
+        "Salsa de tomate"
+      ]
+    },
+    {
+      "nombre": "Risotto",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Arroz arborio",
+        "Queso parmesano",
+        "Vino blanco"
+      ]
+    },
+    {
+      "nombre": "Risotto Champiñones",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Arroz arborio",
+        "Champiñones",
+        "Queso parmesano",
+        "Vino blanco"
+      ]
+    },
+    {
+      "nombre": "Quinua",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Quinua",
+        "Espinaca",
+        "Brócoli",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Champiñones",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Champiñones",
+        "Salsa alfredo",
+        "Ajo",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Americana",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa napolitana",
+        "Champiñones",
+        "Tocineta"
+      ]
+    },
+    {
+      "nombre": "Raviolis",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Raviolis de queso",
+        "Ricotta",
+        "Salsa alfredo"
+      ]
+    },
+    {
+      "nombre": "Salsa César",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa césar"
+      ]
+    }
+  ],
+  "Pastas Combinadas": [
+    {
+      "nombre": "Lombarda",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Pollo",
+        "Champiñones",
+        "Brócoli"
+      ]
+    },
+    {
+      "nombre": "Camarones al Limón",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Camarones",
+        "Ajo",
+        "Limón"
+      ]
+    },
+    {
+      "nombre": "Stroganoff",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Solomito de res",
+        "Champiñones"
+      ]
+    },
+    {
+      "nombre": "Salmón y Tocineta",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Salmón",
+        "Tocineta"
+      ]
+    },
+    {
+      "nombre": "Di Mare",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Camarones",
+        "Calamares",
+        "Champiñones",
+        "Mejillones"
+      ]
+    },
+    {
+      "nombre": "Di Mare Rosa",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Salsa napolitana",
+        "Camarones",
+        "Calamares",
+        "Mejillones",
+        "Palmitos de cangrejo"
+      ]
+    },
+    {
+      "nombre": "Carnes",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Solomito de res",
+        "Pollo",
+        "Tocineta",
+        "Tomate cherry"
+      ]
+    },
+    {
+      "nombre": "Salmón y Espinaca",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Salmón",
+        "Espinaca"
+      ]
+    },
+    {
+      "nombre": "Salmón al Pesto",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Pesto",
+        "Salmón"
+      ]
+    },
+    {
+      "nombre": "Salmón al Huerto",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Salmón"
+      ]
+    },
+    {
+      "nombre": "Mar y Tierra",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Solomito de res",
+        "Camarones"
+      ]
+    },
+    {
+      "nombre": "Romana",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Pollo",
+        "Champiñones salteados"
+      ]
+    },
+    {
+      "nombre": "Carbonara Combinada",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Salsa alfredo",
+        "Cerdo",
+        "Tocineta",
+        "Champiñones salteados",
+        "Salsa napolitana",
+        "Crema"
+      ]
+    },
+    {
+      "nombre": "Boloñesa Combinada",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Carne boloñesa",
+        "Salsa napolitana"
+      ]
+    },
+    {
+      "nombre": "Pasta al Huerto",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Pesto",
+        "Vegetales",
+        "Brócoli",
+        "Pimentón",
+        "Albahaca",
+        "Semillas de girasol"
+      ]
+    },
+    {
+      "nombre": "Pasta Boloñesa Vegetariana",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta",
+        "Lenteja",
+        "Tofu",
+        "Albahaca",
+        "Semillas de girasol"
+      ]
+    }
+  ],
+  "Lasagnas": [
+    {
+      "nombre": "Lasagna Mixta",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Pollo",
+        "Carne boloñesa",
+        "Salsa napolitana",
+        "Queso",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Lasagna Pollo",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Pollo",
+        "Salsa napolitana",
+        "Queso",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Lasagna Carne",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Carne boloñesa",
+        "Salsa napolitana",
+        "Queso",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Lasagna Mixta + Tocineta",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Pollo",
+        "Carne boloñesa",
+        "Tocineta",
+        "Salsa napolitana",
+        "Queso",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Lasagna Pollo + Champiñones",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Pollo",
+        "Champiñones",
+        "Salsa napolitana",
+        "Queso",
+        "Queso parmesano"
+      ]
+    },
+    {
+      "nombre": "Lasagna Vegetariana",
+      "restaurante": "Montolivo",
+      "ingredientes": [
+        "Pasta de lasagna",
+        "Vegetales",
+        "Espinaca",
+        "Champiñones",
+        "Crema de leche",
+        "Queso parmesano",
+        "Semillas de girasol",
+        "Queso"
+      ]
+    }
+  ]
+}

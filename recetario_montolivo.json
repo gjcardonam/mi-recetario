@@ -1,0 +1,75 @@
+{
+  "Arma tu Plato - Proteínas": [
+    {"nombre":"Pollo","restaurante":"Montolivo","ingredientes":["Pollo"]},
+    {"nombre":"Solomito","restaurante":"Montolivo","ingredientes":["Solomito de res"]},
+    {"nombre":"Cañón de Cerdo","restaurante":"Montolivo","ingredientes":["Cañón de cerdo"]},
+    {"nombre":"Salmón","restaurante":"Montolivo","ingredientes":["Salmón"]},
+    {"nombre":"Pescado","restaurante":"Montolivo","ingredientes":["Filete de pescado","Limón"]},
+    {"nombre":"Tilapia","restaurante":"Montolivo","ingredientes":["Tilapia"]},
+    {"nombre":"Milanesa de Pollo","restaurante":"Montolivo","ingredientes":["Pollo apanado","Queso parmesano"]},
+    {"nombre":"Cordon Bleu","restaurante":"Montolivo","ingredientes":["Pollo","Jamón","Queso"]},
+    {"nombre":"Albóndigas","restaurante":"Montolivo","ingredientes":["Carne molida","Salsa de tomate"]}
+  ],
+  "Arma tu Plato - Complementos (Pastas y Risottos)": [
+    {"nombre":"Alfredo","restaurante":"Montolivo","ingredientes":["Pasta","Crema de leche","Queso parmesano"]},
+    {"nombre":"Carbonara","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Tocineta","Queso parmesano"]},
+    {"nombre":"Pesto","restaurante":"Montolivo","ingredientes":["Pasta","Pesto","Queso parmesano"]},
+    {"nombre":"Pesto Rojo","restaurante":"Montolivo","ingredientes":["Pasta","Pesto de tomate seco","Alcaparras","Aceite de oliva"]},
+    {"nombre":"Napolitana","restaurante":"Montolivo","ingredientes":["Pasta","Salsa napolitana"]},
+    {"nombre":"Al Burro","restaurante":"Montolivo","ingredientes":["Pasta","Mantequilla","Queso parmesano"]},
+    {"nombre":"Boloñesa","restaurante":"Montolivo","ingredientes":["Pasta","Carne boloñesa","Salsa de tomate"]},
+    {"nombre":"Risotto","restaurante":"Montolivo","ingredientes":["Arroz arborio","Queso parmesano","Vino blanco"]},
+    {"nombre":"Risotto Champiñones","restaurante":"Montolivo","ingredientes":["Arroz arborio","Champiñones","Queso parmesano","Vino blanco"]},
+    {"nombre":"Quinua","restaurante":"Montolivo","ingredientes":["Quinua","Espinaca","Brócoli","Champiñones"]},
+    {"nombre":"Champiñones","restaurante":"Montolivo","ingredientes":["Champiñones","Salsa alfredo","Ajo","Queso parmesano"]},
+    {"nombre":"Americana","restaurante":"Montolivo","ingredientes":["Pasta","Salsa napolitana","Champiñones","Tocineta"]},
+    {"nombre":"Raviolis","restaurante":"Montolivo","ingredientes":["Raviolis de queso","Ricotta","Salsa alfredo"]},
+    {"nombre":"Salsa César","restaurante":"Montolivo","ingredientes":["Pasta","Salsa césar"]}
+  ],
+  "Arma tu Ensalada": [
+    {"nombre":"Ensalada de la Casa","restaurante":"Montolivo","ingredientes":["Lechuga","Tomate cherry","Cebolla","Queso parmesano","Crutones","Balsámico en reducción"]},
+    {"nombre":"Ensalada César","restaurante":"Montolivo","ingredientes":["Lechuga","Crutones","Queso parmesano","Aderezo césar"]}
+  ],
+  "Arma tu Ensalada - Complementos": [
+    {"nombre":"Ensalada con complemento Puerro Crocante","restaurante":"Montolivo","ingredientes":["Puerro crocante"]},
+    {"nombre":"Ensalada con complemento Queso Parmesano","restaurante":"Montolivo","ingredientes":["Queso parmesano"]},
+    {"nombre":"Ensalada con complemento Espinaca","restaurante":"Montolivo","ingredientes":["Espinaca"]},
+    {"nombre":"Ensalada con complemento Champiñones","restaurante":"Montolivo","ingredientes":["Champiñones"]},
+    {"nombre":"Ensalada con complemento Tomate Cherry","restaurante":"Montolivo","ingredientes":["Tomate cherry"]},
+    {"nombre":"Ensalada con complemento Crutones","restaurante":"Montolivo","ingredientes":["Crutones"]},
+    {"nombre":"Ensalada con complemento Huevos","restaurante":"Montolivo","ingredientes":["Huevo"]},
+    {"nombre":"Ensalada con complemento Cebolla Caramelizada","restaurante":"Montolivo","ingredientes":["Cebolla caramelizada"]},
+    {"nombre":"Ensalada con complemento Lentejas Crocantes","restaurante":"Montolivo","ingredientes":["Lentejas crocantes"]},
+    {"nombre":"Ensalada con complemento Zanahoria","restaurante":"Montolivo","ingredientes":["Zanahoria"]},
+    {"nombre":"Ensalada con complemento Zucchini Verde Asado","restaurante":"Montolivo","ingredientes":["Zucchini asado"]},
+    {"nombre":"Ensalada con complemento Garbanzos Crocantes","restaurante":"Montolivo","ingredientes":["Garbanzos crocantes"]},
+    {"nombre":"Ensalada con complemento Hummus Tradicional","restaurante":"Montolivo","ingredientes":["Hummus"]},
+    {"nombre":"Ensalada con complemento Hummus de Remolacha","restaurante":"Montolivo","ingredientes":["Hummus de remolacha","Remolacha"]}
+  ],
+  "Combinados": [
+    {"nombre":"Lombarda","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Pollo","Champiñones","Brócoli"]},
+    {"nombre":"Camarones al Limón","restaurante":"Montolivo","ingredientes":["Pasta","Camarones","Ajo","Limón"]},
+    {"nombre":"Stroganoff","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Solomito de res","Champiñones"]},
+    {"nombre":"Salmón y Tocineta","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Salmón","Tocineta"]},
+    {"nombre":"Di Mare","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Camarones","Calamares","Champiñones","Mejillones"]},
+    {"nombre":"Di Mare Rosa","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Salsa napolitana","Camarones","Calamares","Mejillones","Palmitos de cangrejo"]},
+    {"nombre":"Carnes","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Solomito de res","Pollo","Tocineta","Tomate cherry"]},
+    {"nombre":"Salmón y Espinaca","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Salmón","Espinaca"]},
+    {"nombre":"Salmón al Pesto","restaurante":"Montolivo","ingredientes":["Pasta","Pesto","Salmón"]},
+    {"nombre":"Salmón al Huerto","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Salmón"]},
+    {"nombre":"Mar y Tierra","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Solomito de res","Camarones"]},
+    {"nombre":"Romana","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Pollo","Champiñones salteados"]},
+    {"nombre":"Carbonara Combinada","restaurante":"Montolivo","ingredientes":["Pasta","Salsa alfredo","Cerdo","Tocineta","Champiñones salteados","Salsa napolitana","Crema"]},
+    {"nombre":"Boloñesa Combinada","restaurante":"Montolivo","ingredientes":["Pasta","Carne boloñesa","Salsa napolitana"]},
+    {"nombre":"Pasta al Huerto","restaurante":"Montolivo","ingredientes":["Pasta","Pesto","Vegetales","Brócoli","Pimentón","Albahaca","Semillas de girasol"]},
+    {"nombre":"Pasta Boloñesa Vegetariana","restaurante":"Montolivo","ingredientes":["Pasta","Lenteja","Tofu","Albahaca","Semillas de girasol"]}
+  ],
+  "Lasagnas": [
+    {"nombre":"Lasagna Mixta","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Pollo","Carne boloñesa","Salsa napolitana","Queso","Queso parmesano"]},
+    {"nombre":"Lasagna Pollo","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Pollo","Salsa napolitana","Queso","Queso parmesano"]},
+    {"nombre":"Lasagna Carne","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Carne boloñesa","Salsa napolitana","Queso","Queso parmesano"]},
+    {"nombre":"Lasagna Mixta + Tocineta","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Pollo","Carne boloñesa","Tocineta","Salsa napolitana","Queso","Queso parmesano"]},
+    {"nombre":"Lasagna Pollo + Champiñones","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Pollo","Champiñones","Salsa napolitana","Queso","Queso parmesano"]},
+    {"nombre":"Lasagna Vegetariana","restaurante":"Montolivo","ingredientes":["Pasta de lasagna","Vegetales","Espinaca","Champiñones","Crema de leche","Queso parmesano","Semillas de girasol","Queso"]}
+  ]
+}
