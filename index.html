@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Recetario</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FAF8F5;
+    --card: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B6B6B;
+    --accent: #E8503A;
+    --accent-soft: #FFF0ED;
+    --border: #E8E4DF;
+    --tag-q: #F59E0B;
+    --tag-cw: #6366F1;
+    --tag-cb: #E8503A;
+    --radius: 16px;
+    --sidebar-w: 300px;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 245, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .search-box {
+    flex: 1;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: var(--card);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-box input:focus { border-color: var(--accent); }
+
+  .search-box svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--muted);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stats {
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .stats b { color: var(--text); font-weight: 700; }
+
+  .btn-ingredients-toggle {
+    display: none;
+    padding: 8px 14px;
+    border: 1.5px solid var(--accent);
+    border-radius: 100px;
+    background: var(--card);
+    font-size: 0.82rem;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--accent);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .btn-ingredients-toggle:hover,
+  .btn-ingredients-toggle.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* FILTERS */
+  .filters {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    background: var(--card);
+    font-size: 0.82rem;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--text); color: white; border-color: var(--text); }
+
+  .filter-divider {
+    width: 1px;
+    background: var(--border);
+    margin: 0 4px;
+    align-self: stretch;
+  }
+
+  .tag-btn { font-size: 0.78rem; padding: 5px 10px; }
+  .tag-btn[data-tag="Qbano"] { border-color: var(--tag-q); color: var(--tag-q); }
+  .tag-btn[data-tag="Qbano"].active { background: var(--tag-q); color: white; }
+  .tag-btn[data-tag="Crepes & Waffles"] { border-color: var(--tag-cw); color: var(--tag-cw); }
+  .tag-btn[data-tag="Crepes & Waffles"].active { background: var(--tag-cw); color: white; }
+  .tag-btn[data-tag="Chef Burger"] { border-color: var(--tag-cb); color: var(--tag-cb); }
+  .tag-btn[data-tag="Chef Burger"].active { background: var(--tag-cb); color: white; }
+
+  /* SELECTED INGREDIENTS BAR */
+  .selected-ingredients-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 24px 0;
+    display: none;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .selected-ingredients-bar.visible { display: flex; }
+
+  .selected-ingredients-bar .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+  }
+
+  .selected-ing-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .selected-ing-pill:hover { background: #c93d2a; }
+  .selected-ing-pill svg { width: 12px; height: 12px; }
+
+  .clear-all-ing {
+    padding: 4px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    background: var(--card);
+    font-size: 0.75rem;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .clear-all-ing:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* LAYOUT */
+  .layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    scrollbar-width: thin;
+  }
+
+  .sidebar::-webkit-scrollbar { width: 6px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .sidebar-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-title svg { width: 18px; height: 18px; color: var(--accent); }
+
+  .sidebar-search {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-search input {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-family: inherit;
+    outline: none;
+    background: var(--bg);
+  }
+
+  .sidebar-search input:focus { border-color: var(--accent); }
+
+  /* ACCORDION */
+  .accordion-section { border-bottom: 1px solid var(--border); }
+  .accordion-section:last-child { border-bottom: none; }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+
+  .accordion-header:hover { background: var(--bg); }
+
+  .accordion-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .accordion-header-left .icon { font-size: 1rem; }
+
+  .accordion-header .count-badge {
+    font-size: 0.72rem;
+    background: var(--bg);
+    color: var(--muted);
+    padding: 2px 7px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  .accordion-header .chevron {
+    width: 16px;
+    height: 16px;
+    color: var(--muted);
+    transition: transform 0.25s;
+  }
+
+  .accordion-section.open .chevron { transform: rotate(180deg); }
+
+  .accordion-body {
+    display: none;
+    padding: 0 12px 12px;
+  }
+
+  .accordion-section.open .accordion-body { display: block; }
+
+  .ing-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 0.82rem;
+    color: var(--text);
+  }
+
+  .ing-item:hover { background: var(--bg); }
+
+  .ing-item.selected {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .ing-item .ing-count {
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--bg);
+    padding: 1px 6px;
+    border-radius: 100px;
+    min-width: 22px;
+    text-align: center;
+  }
+
+  .ing-item.selected .ing-count {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* MAIN CONTENT */
+  .content { flex: 1; min-width: 0; }
+
+  .category { margin-bottom: 40px; }
+
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--text);
+  }
+
+  .category-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+  }
+
+  .category-count {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  /* CARD */
+  .recipe-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .recipe-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 24px rgba(232, 80, 58, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .recipe-card .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .tag-q { background: #FEF3C7; color: #92400E; }
+  .tag-cw { background: #E0E7FF; color: #3730A3; }
+  .tag-cb { background: #FEE2E2; color: #991B1B; }
+
+  .recipe-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .ingredients-preview {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ingredient-count {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ingredient-count svg { width: 14px; height: 14px; }
+
+  /* EXPANDED CARD */
+  .recipe-card.expanded {
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(232, 80, 58, 0.12);
+  }
+
+  .recipe-card.expanded .ingredients-preview { display: none; }
+  .recipe-card.expanded .ingredient-count { display: none; }
+
+  .ingredients-full {
+    display: none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .recipe-card.expanded .ingredients-full { display: block; }
+
+  .ingredients-full ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .ingredients-full li {
+    font-size: 0.82rem;
+    padding: 4px 10px;
+    background: var(--bg);
+    border-radius: 8px;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .ingredients-full li.highlighted {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* EMPTY STATE */
+  .empty {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--muted);
+  }
+
+  .empty-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.4; }
+  .empty h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--text); }
+  .empty p { margin-top: 4px; font-size: 0.95rem; }
+
+  /* MOBILE OVERLAY */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .sidebar-overlay.visible { opacity: 1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .btn-ingredients-toggle { display: inline-flex; }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -320px;
+      width: 300px;
+      height: 100vh;
+      max-height: 100vh;
+      border-radius: 0;
+      border: none;
+      border-right: 1px solid var(--border);
+      z-index: 201;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.mobile-open { left: 0; }
+    .sidebar-overlay.visible { display: block; }
+
+    .layout { padding: 16px; }
+    .recipes-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .header-inner { padding: 12px 16px; }
+    .logo { font-size: 1.3rem; }
+    .search-box { max-width: 100%; order: 3; flex-basis: 100%; }
+    .stats { font-size: 0.8rem; }
+    .filters { padding: 12px 16px 0; }
+    .selected-ingredients-bar { padding: 10px 16px 0; }
+    .category-name { font-size: 1.25rem; }
+  }
+
+  /* SCROLL TO TOP */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--text);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 99;
+  }
+
+  .scroll-top.visible { opacity: 1; }
+  .scroll-top svg { width: 20px; height: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Mi <span>Recetario</span></div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search" placeholder="Buscar receta o ingrediente..." autocomplete="off">
+    </div>
+    <div class="header-right">
+      <button class="btn-ingredients-toggle" id="btnIngToggle" onclick="toggleMobileSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:4px"><path d="M3 6h18M3 12h12M3 18h6"/></svg>
+        Ingredientes
+      </button>
+      <div class="stats" id="stats"></div>
+    </div>
+  </div>
+</header>
+
+<div class="filters" id="filters"></div>
+<div class="selected-ingredients-bar" id="selectedBar"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Explorar por ingrediente
+    </div>
+    <div class="sidebar-search">
+      <input type="text" id="ingSidebarSearch" placeholder="Filtrar ingredientes..." oninput="filterSidebarIngredients(this.value)">
+    </div>
+    <div id="accordionContainer"></div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+
+  <div class="content" id="main"></div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// DATA — normalizada y coherente
+// ═══════════════════════════════════════════════════════════════
+const DATA = {
+  "Sopas": [
+    {"nombre":"Sopa de Espinaca","restaurante":"Crepes & Waffles","ingredientes":["Espinaca"]},
+    {"nombre":"Sopa Mexicana de Pollo","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Chile chipotle","Crema agria","Queso","Aguacate","Pico de gallo","Tortilla mexicana"]},
+    {"nombre":"Sopa de Lentejas","restaurante":"Crepes & Waffles","ingredientes":["Lentejas","Champiñones","Portobello","Especias"]},
+    {"nombre":"Sopa Covarachía","restaurante":"Crepes & Waffles","ingredientes":["Tomate","Maíz","Plátano","Aguacate","Crema agria","Cilantro"]},
+    {"nombre":"Sopa del Sol","restaurante":"Crepes & Waffles","ingredientes":["Zapallo","Queso de cabra","Pesto","Pan pita","Cilantro"]},
+    {"nombre":"Sopa Vida en Verdes","restaurante":"Crepes & Waffles","ingredientes":["Vegetales variados","Maíz tierno"]},
+    {"nombre":"Sopa Soy Otoño (vegana)","restaurante":"Crepes & Waffles","ingredientes":["Vegetales variados","Frijoles"]},
+    {"nombre":"Sopa Covarachía Vegana","restaurante":"Crepes & Waffles","ingredientes":["Tomate","Maíz","Plátano","Aguacate","Crema agria vegana","Cilantro"]}
+  ],
+  "Sándwiches": [
+    {"nombre":"Sandwich Burger","restaurante":"Qbano","ingredientes":["Carne de res","Cerdo","Queso mozzarella","Tocineta","Lechuga batavia","Tomate","Pepinillos","Salsa BBQ","Salsa Qbano"]},
+    {"nombre":"Sandwich Ropa Vieja","restaurante":"Qbano","ingredientes":["Carne de res desmechada","Queso amarillo","Lechuga","Tomate","Pimentón","Apio","Mostaza","Salsa BBQ","Pasta de tomate","Cebolla roja"]},
+    {"nombre":"Sándwich Cordero","restaurante":"Qbano","ingredientes":["Cordero","Cerdo","Queso mozzarella","Lechuga batavia","Salsa Qbano"]},
+    {"nombre":"Sándwich Costilla","restaurante":"Qbano","ingredientes":["Costilla de cerdo","Salsa BBQ","Maíz tierno","Queso mozzarella","Lechuga","Salsa Qbano"]},
+    {"nombre":"Sándwich Especial","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Jamonada","Cordero","Res","Queso mozzarella","Lechuga batavia","Salsa Qbano"]},
+    {"nombre":"Sándwich Hawaiano","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Piña","Queso mozzarella","Mayonesa"]},
+    {"nombre":"Sándwich Pavo","restaurante":"Qbano","ingredientes":["Pechuga de pavo","Tocineta","Queso mozzarella","Lechuga","Salsa Qbano","Miel mostaza"]},
+    {"nombre":"Sándwich Pollo","restaurante":"Qbano","ingredientes":["Pechuga de pollo desmechada","Tomate","Queso mozzarella","Lechuga","Mayonesa"]},
+    {"nombre":"Sándwich Pollo Crunch","restaurante":"Qbano","ingredientes":["Pollo apanado","Miel mostaza","Tomate","Pepinillos","Queso mozzarella","Salsa Qbano"]},
+    {"nombre":"Sándwich Qumbia","restaurante":"Qbano","ingredientes":["Carne de res desmechada","Hogao","Plátano maduro","Chorizo de cerdo","Maíz tierno","Salsa Qbano"]},
+    {"nombre":"Sándwich Roast Beef","restaurante":"Qbano","ingredientes":["Roast beef","Tomate","Queso mozzarella","Lechuga","Salsa BBQ","Salsa Qbano"]},
+    {"nombre":"Sándwich Súper Especial","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Jamonada","Cordero","Res","Salchichón","Tomate","Queso mozzarella","Lechuga batavia","Salsa Qbano"]},
+    {"nombre":"Sándwich al Pastor","restaurante":"Qbano","ingredientes":["Costilla de cerdo","Lechuga batavia","Hogao","Pasta de tomate","Piña asada","Pico de gallo","Cebolla blanca","Cilantro"]},
+    {"nombre":"Sándwich Vegetariano","restaurante":"Qbano","ingredientes":["Champiñones frescos","Pimentón rojo","Cebolla roja","Queso mozzarella","Salsa Qbano"]}
+  ],
+  "Hamburguesas": [
+    {"nombre":"Hamburguesa Doble Carne","restaurante":"Qbano","ingredientes":["Carne de res","Cerdo","Tocineta","Tomate","Cebolla","Salsa BBQ","Queso"]},
+    {"nombre":"Hamburguesa Hawaiana","restaurante":"Qbano","ingredientes":["Carne de res","Cerdo","Piña","Tocineta","Tomate","Cebolla","Queso"]},
+    {"nombre":"Hamburguesa Pollo Apanado","restaurante":"Qbano","ingredientes":["Pollo apanado","Miel mostaza","Queso mozzarella","Tocineta","Tomate","Cebolla"]},
+    {"nombre":"Hamburguesa Tradicional","restaurante":"Qbano","ingredientes":["Carne de res","Cerdo","Queso mozzarella","Tocineta","Tomate","Lechuga","Cebolla","Salsa BBQ"]},
+    {"nombre":"Hamburguesa Veggie","restaurante":"Qbano","ingredientes":["Proteína vegetal","Champiñones frescos","Queso mozzarella","Salsa de queso cheddar"]},
+    {"nombre":"Hamburguesa de Pollo Desmechado","restaurante":"Qbano","ingredientes":["Pollo desmechado","Carne de res","Salsa BBQ","Tocineta","Tomate","Cebolla","Queso mozzarella"]},
+    {"nombre":"Big Boy","restaurante":"Chef Burger","ingredientes":["Pan brioche","Lechuga","Carne de res","Queso americano","Cebolla morada","Pepinillos","Semillas de mostaza","Mayonesa de la casa"]},
+    {"nombre":"Clásica","restaurante":"Chef Burger","ingredientes":["Pan ajonjolí","Carne de res","Lechuga","Tomate","Cebolla","Salsa de tomate","Mostaza","Mayonesa de chipotle"]},
+    {"nombre":"Cheese Burger","restaurante":"Chef Burger","ingredientes":["Pan ajonjolí","Carne de res","Lechuga","Tomate","Cebolla","Queso cheddar","Salsa de tomate","Mostaza","Mayonesa de chipotle"]},
+    {"nombre":"Cheese and Bacon","restaurante":"Chef Burger","ingredientes":["Pan ajonjolí","Carne de res","Lechuga","Tomate","Cebolla","Queso cheddar","Tocineta","Salsa de tomate","Mostaza","Mayonesa de chipotle"]},
+    {"nombre":"Avocado","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Lechuga","Tomate","Cebolla","Queso cheddar","Tocineta","Aguacate","Salsa chipotle","Salsa BBQ"]},
+    {"nombre":"Blue Cheese","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Lechuga","Tomate","Champiñones","Cebolla caramelizada","Queso azul"]},
+    {"nombre":"Gringa","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Tocineta","Lechuga","Tomate","Cebolla morada","Pepinillos","Queso cheddar","Mayonesa"]},
+    {"nombre":"Peruana","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Guacamole","Lechuga","Tomate","Aguacate","Cebolla morada","Ají dulce","Ají amarillo","Jalapeño","Cilantro","Salsa criolla"]},
+    {"nombre":"New Philadelphia","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Lechuga romana","Lechuga hidropónica","Rúgula","Cebolla caramelizada","Queso crema","Nueces","Miel"]},
+    {"nombre":"Good Burger","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Queso costeño","Lechuga hidropónica","Cebolla morada","Mermelada de pimentón","Mayonesa de pimentón"]},
+    {"nombre":"New Royale","restaurante":"Chef Burger","ingredientes":["Pan ajonjolí","Carne de res","Queso cheddar","Tocineta","Lechuga","Tomate","Cebolla","Champiñones salteados","Huevo","Salsa BBQ"]},
+    {"nombre":"Tropical","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Lechuga romana","Queso crema","Piña asada","Lechuga hidropónica","Queso costeño","Salsa de jengibre"]},
+    {"nombre":"Sriracha","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Chorizo argentino","Champiñones","Lechuga hidropónica","Cebollín","Queso mozzarella","Mayonesa de sriracha"]},
+    {"nombre":"New Mexico","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Queso cheddar","Lechuga","Tomate","Tortilla de maíz","Pico de gallo","Sour cream de jalapeño","Guacamole"]},
+    {"nombre":"La Sailor","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Lechuga hidropónica","Cebolla caramelizada","Queso crema","Tocineta","Salsa BBQ"]},
+    {"nombre":"Argentina","restaurante":"Chef Burger","ingredientes":["Pan campesino","Carne de res","Chorizo argentino","Lechuga","Tomate","Queso mozzarella","Cebolla","Chimichurri"]},
+    {"nombre":"L'Entrecot","restaurante":"Chef Burger","ingredientes":["Pan brioche","Carne de res","Salsa café de París","Queso mozzarella","Tomate"]},
+    {"nombre":"Happy Chicken","restaurante":"Chef Burger","ingredientes":["Pan brioche","Pechuga de pollo","Lechuga hidropónica","Lechuga romana","Tomate","Pesto","Queso mozzarella","Mayonesa de pesto"]},
+    {"nombre":"Crispy Chicken","restaurante":"Chef Burger","ingredientes":["Pan brioche","Pollo apanado","Queso crema feta","Lechuga romana","Pepinillos","Coleslaw","Mayonesa"]},
+    {"nombre":"WTF! Burger (vegana)","restaurante":"Chef Burger","ingredientes":["Pan brioche","Proteína vegetal","Lechuga hidropónica","Lechuga romana","Cebolla caramelizada","Queso mozzarella","Puerro","Nueces","Mayonesa de cerveza"]},
+    {"nombre":"Veggie","restaurante":"Chef Burger","ingredientes":["Pan campesino","Portobello","Lechuga","Calabacín","Pesto","Tomate","Queso mozzarella","Queso azul","Cebolla caramelizada"]}
+  ],
+  "Wraps": [
+    {"nombre":"Wrap Al Pastor","restaurante":"Qbano","ingredientes":["Costilla de cerdo","Lechuga batavia","Hogao","Pasta de tomate","Piña asada","Pico de gallo","Cebolla blanca","Cilantro"]},
+    {"nombre":"Wrap Costilla","restaurante":"Qbano","ingredientes":["Costilla de cerdo","Salsa BBQ","Maíz tierno","Queso mozzarella","Lechuga","Salsa Qbano"]},
+    {"nombre":"Wrap Especial","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Jamonada","Cordero","Res","Queso mozzarella","Lechuga batavia","Salsa Qbano"]},
+    {"nombre":"Wrap Hawaiano","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Piña","Queso mozzarella","Mayonesa"]},
+    {"nombre":"Wrap Pollo","restaurante":"Qbano","ingredientes":["Pechuga de pollo desmechada","Tomate","Queso mozzarella","Lechuga","Mayonesa"]},
+    {"nombre":"Wrap Qumbia","restaurante":"Qbano","ingredientes":["Carne de res desmechada","Hogao","Plátano maduro","Chorizo de cerdo","Maíz tierno","Salsa Qbano"]},
+    {"nombre":"Wrap Roast Beef","restaurante":"Qbano","ingredientes":["Roast beef","Tomate","Queso mozzarella","Lechuga","Salsa BBQ","Salsa Qbano"]},
+    {"nombre":"Wrap Ropa Vieja","restaurante":"Qbano","ingredientes":["Carne de res desmechada","Queso amarillo","Lechuga","Tomate","Pimentón","Apio","Mostaza","Salsa BBQ","Pasta de tomate","Cebolla roja"]},
+    {"nombre":"Wrap Súper Especial","restaurante":"Qbano","ingredientes":["Cerdo","Pollo","Jamonada","Cordero","Res","Salchichón","Tomate","Queso mozzarella","Lechuga batavia","Salsa Qbano"]},
+    {"nombre":"Wrap Vegetariano","restaurante":"Qbano","ingredientes":["Champiñones frescos","Pimentón rojo","Cebolla roja","Queso mozzarella","Salsa Qbano"]}
+  ],
+  "Bowls": [
+    {"nombre":"Qbowl Costilla","restaurante":"Qbano","ingredientes":["Arroz","Cilantro","Guacamole","Cebolla blanca","Tomate","Costilla desmechada","Piña"]},
+    {"nombre":"Qbowl Criollo","restaurante":"Qbano","ingredientes":["Arroz","Cilantro","Guacamole","Cebolla blanca","Tomate","Carne de res desmechada","Hogao","Chorizo","Frijoles"]},
+    {"nombre":"Qbowl Pollo","restaurante":"Qbano","ingredientes":["Arroz","Cilantro","Guacamole","Cebolla blanca","Tomate","Pollo desmechado","Hogao","Maíz"]},
+    {"nombre":"Qbowl Vegetariano","restaurante":"Qbano","ingredientes":["Arroz","Cilantro","Guacamole","Cebolla blanca","Tomate","Champiñones","Maíz","Cebolla roja"]}
+  ],
+  "Crepes de Pollo": [
+    {"nombre":"Crepe de Pollo, Queso y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Queso","Champiñones"]},
+    {"nombre":"Crepe de Pollo y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Champiñones"]},
+    {"nombre":"Crepe de Pollo y Queso","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Queso"]},
+    {"nombre":"Crepe de Pollo al Curry","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Salsa curry"]},
+    {"nombre":"Crepe de Pollo Trufa Mexicano","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Huitlacoche","Aguacate","Salsa de queso"]},
+    {"nombre":"Crepe de Pollo, Brócoli y Queso","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Brócoli","Queso"]},
+    {"nombre":"Crepe de Pollo Peruano","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Aceitunas moradas","Rúgula","Huevo"]},
+    {"nombre":"Crepe de Pollo Mexicano","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Salsa mexicana","Chipotle","Queso rallado","Lechuga","Crema agria","Ají","Pico de gallo"]},
+    {"nombre":"Crepe de Pollo Thai","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Portobello","Curry","Maracuyá"]},
+    {"nombre":"Crepe de Pollo Rosarito","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Salsa mexicana","Chipotle","Aguacate","Frijoles"]},
+    {"nombre":"Crepe de Pollo al Curry Hindú","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Curry","Maní","Uvas pasas","Chutney de mango"]},
+    {"nombre":"Crepe de Pollo al Ají Panka","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Ají panka"]},
+    {"nombre":"Crepe Pollo Chipotle","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Chipotle","Aguacate","Pico de gallo","Queso","Maíz tostado"]},
+    {"nombre":"Crepe de Pollo en Salsa Verde","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Tomatillo verde","Queso","Crema agria","Pimentón asado","Cilantro"]}
+  ],
+  "Crepes de Carne": [
+    {"nombre":"Crepe de Boloñesa y Queso","restaurante":"Crepes & Waffles","ingredientes":["Carne boloñesa","Queso"]},
+    {"nombre":"Crepe de Boloñesa, Queso y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Carne boloñesa","Queso","Champiñones"]},
+    {"nombre":"Crepe de Boloñesa, Jamón y Queso","restaurante":"Crepes & Waffles","ingredientes":["Carne boloñesa","Jamón","Queso"]},
+    {"nombre":"Crepe de Stroganoff","restaurante":"Crepes & Waffles","ingredientes":["Lomo de res","Champiñones","Salsa stroganoff"]},
+    {"nombre":"Crepe de Lomito Pimienta","restaurante":"Crepes & Waffles","ingredientes":["Lomo de res","Salsa a la pimienta"]},
+    {"nombre":"Crepe de Ternera","restaurante":"Crepes & Waffles","ingredientes":["Ternera"]},
+    {"nombre":"Crepe de Ternera y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Ternera","Champiñones"]},
+    {"nombre":"Crepe Mexicano","restaurante":"Crepes & Waffles","ingredientes":["Carne boloñesa","Salsa mexicana","Queso rallado","Lechuga","Crema agria","Ají","Pico de gallo"]},
+    {"nombre":"Crepe de Lomo Árabe","restaurante":"Crepes & Waffles","ingredientes":["Lomo de res","Especias árabes","Ensalada árabe"]},
+    {"nombre":"Crepe Sombrero Vueltiao","restaurante":"Crepes & Waffles","ingredientes":["Carne desmechada","Hogao","Plátano maduro","Crema agria","Aguacate","Pico de gallo"]},
+    {"nombre":"Crepe de Roastbeef","restaurante":"Crepes & Waffles","ingredientes":["Roast beef","Queso","Cebolla asada","Rúgula","Mayonesa chipotle","Cebolla encurtida"]},
+    {"nombre":"Crepe de Cochinita Pibil","restaurante":"Crepes & Waffles","ingredientes":["Cerdo desmechado","Cítricos","Aguacate","Pico de gallo","Cebolla encurtida","Crema agria"]}
+  ],
+  "Crepes de Mar": [
+    {"nombre":"Crepe de Cangrejo Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Palmitos de cangrejo","Salsa de la casa"]},
+    {"nombre":"Crepe de Cangrejo al Curry","restaurante":"Crepes & Waffles","ingredientes":["Palmitos de cangrejo","Salsa curry"]},
+    {"nombre":"Crepe de Calamares Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Calamares","Salsa de la casa"]},
+    {"nombre":"Crepe de Calamares al Curry","restaurante":"Crepes & Waffles","ingredientes":["Calamares","Salsa curry"]},
+    {"nombre":"Crepe de Camarones al Curry","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Salsa curry"]},
+    {"nombre":"Crepe de Camarones Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Salsa de la casa"]},
+    {"nombre":"Crepe de Camarones al Ajillo","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Salsa al ajillo"]},
+    {"nombre":"Crepe Salmon Roll","restaurante":"Crepes & Waffles","ingredientes":["Salmón ahumado","Rúgula","Queso crema","Mostaza","Cebolla","Aguacate","Vegetales frescos","Ensalada verde"]},
+    {"nombre":"Crepe de Camarones Rosarito","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Chipotle","Aguacate","Frijoles rojos"]},
+    {"nombre":"Crepe Mar Encocado","restaurante":"Crepes & Waffles","ingredientes":["Pulpo","Camarones","Calamares","Langostinos","Quinua negra","Salsa de coco","Coco crujiente"]},
+    {"nombre":"Crepe Zeus","restaurante":"Crepes & Waffles","ingredientes":["Salmón ahumado","Aguacate","Cebolla encurtida","Crema agria","Aceitunas moradas","Germinados"]},
+    {"nombre":"Salmón Ahumado","restaurante":"Crepes & Waffles","ingredientes":["Salmón ahumado","Crema agria","Queso crema","Cebollín","Lechuga","Vinagreta de hierbas"]}
+  ],
+  "Crepes Clásicos": [
+    {"nombre":"French Connection","restaurante":"Crepes & Waffles","ingredientes":["Jamón ahumado","Queso ricotta","Syrup"]},
+    {"nombre":"Crepe de Jamón y Queso","restaurante":"Crepes & Waffles","ingredientes":["Jamón","Queso"]},
+    {"nombre":"Crepe de Jamón, Queso y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Jamón","Queso","Champiñones"]},
+    {"nombre":"Crepe de Pavo y Queso Holandés","restaurante":"Crepes & Waffles","ingredientes":["Pechuga de pavo","Queso holandés","Salsa dijonnaise"]},
+    {"nombre":"Crepe Sensación","restaurante":"Crepes & Waffles","ingredientes":["Jamón ahumado","Queso tipo sabana","Huevo"]}
+  ],
+  "Crepes Vegetarianos": [
+    {"nombre":"Crepe Poblana","restaurante":"Crepes & Waffles","ingredientes":["Quesos variados","Aguacate","Pico de gallo","Crema agria","Lechuga","Ají"]},
+    {"nombre":"Crepe Normanda","restaurante":"Crepes & Waffles","ingredientes":["Champiñones frescos","Quesos variados","Salsa de champiñones"]},
+    {"nombre":"Crepe Toscana","restaurante":"Crepes & Waffles","ingredientes":["Queso","Tomate","Albahaca","Champiñones frescos","Salsa de champiñones","Salsa napolitana"]},
+    {"nombre":"Crepe Caprino","restaurante":"Crepes & Waffles","ingredientes":["Champiñones salteados","Tomate seco","Tomate fresco","Pesto","Vinagre balsámico","Mozzarella","Nueces"]},
+    {"nombre":"Crepe Romana","restaurante":"Crepes & Waffles","ingredientes":["Mozzarella de búfala","Salsa napolitana","Albahaca","Queso parmesano"]},
+    {"nombre":"Crepe Sicilia","restaurante":"Crepes & Waffles","ingredientes":["Mozzarella de búfala","Tomate seco","Tomate fresco","Albahaca"]},
+    {"nombre":"Crepe Montes de María","restaurante":"Crepes & Waffles","ingredientes":["Frijoles rojos","Tofu","Tahini","Guacamole","Rúgula","Lentejas tostadas"]},
+    {"nombre":"Crepe de Champiñones, Alcachofa y Queso","restaurante":"Crepes & Waffles","ingredientes":["Champiñones","Alcachofa","Queso"]},
+    {"nombre":"Crepe de Champiñones al Ajillo","restaurante":"Crepes & Waffles","ingredientes":["Champiñones","Salsa al ajillo"]}
+  ],
+  "Crepes Veganos": [
+    {"nombre":"Crepe Montes de María Vegano","restaurante":"Crepes & Waffles","ingredientes":["Frijoles rojos","Tofu","Tahini","Guacamole","Tomate cherry","Rúgula","Lentejas tostadas"]},
+    {"nombre":"Crepe Vegan Boloñesa","restaurante":"Crepes & Waffles","ingredientes":["Tofu","Espinaca","Berenjena","Champiñones","Tahini"]},
+    {"nombre":"Crepe Sombrero Vueltiao Vegano","restaurante":"Crepes & Waffles","ingredientes":["Orellanas","Plátano maduro","Aguacate","Pico de gallo","Crema agria vegana"]},
+    {"nombre":"Pita En El Bosque","restaurante":"Crepes & Waffles","ingredientes":["Pan pita","Hongos variados","Espinaca","Cebolla asada","Peperoncino","Queso crema de almendras","Aceite de trufa"]},
+    {"nombre":"Ensalada Tofu Marroquí","restaurante":"Crepes & Waffles","ingredientes":["Couscous","Especias","Aguacate","Chutney de mango","Quinua tostada","Ensalada verde","Vinagreta marroquí"]}
+  ],
+  "Panne Cook": [
+    {"nombre":"PanneCook de Pollo al Curry","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Pollo","Salsa curry"]},
+    {"nombre":"PanneCook de Pollo","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Pollo"]},
+    {"nombre":"PanneCook de Pollo, Queso y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Pollo","Champiñones","Queso"]},
+    {"nombre":"PanneCook de Pollo y Espárragos","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Pollo","Champiñones","Espárragos"]},
+    {"nombre":"PanneCook de Stroganoff","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Lomo de res","Champiñones","Salsa stroganoff"]},
+    {"nombre":"PanneCook de Lomito Pimienta","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Lomo de res","Salsa a la pimienta"]},
+    {"nombre":"PanneCook de Cangrejo al Curry","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Palmitos de cangrejo","Salsa curry"]},
+    {"nombre":"PanneCook de Cangrejo Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Palmitos de cangrejo","Salsa de la casa"]},
+    {"nombre":"PanneCook de Calamares al Curry","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Calamares","Salsa curry"]},
+    {"nombre":"PanneCook de Calamares Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Calamares","Salsa de la casa"]},
+    {"nombre":"PanneCook de Camarones al Curry","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Camarones","Salsa curry"]},
+    {"nombre":"PanneCook de Camarones al Ajillo","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Camarones","Salsa al ajillo"]},
+    {"nombre":"PanneCook de Camarones Marco Polo","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Camarones","Salsa de la casa"]},
+    {"nombre":"PanneCook de Ternera","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Ternera"]},
+    {"nombre":"PanneCook de Ternera y Champiñones","restaurante":"Crepes & Waffles","ingredientes":["Pan artesanal","Ternera","Champiñones"]}
+  ],
+  "Ensaladas": [
+    {"nombre":"Ensalada Mexicana","restaurante":"Qbano","ingredientes":["Costilla de cerdo desmechada","Frijoles negros","Maíz tierno","Queso mozzarella","Guacamole","Pico de gallo","Lechuga batavia"]},
+    {"nombre":"Ensalada Pavo","restaurante":"Qbano","ingredientes":["Pechuga de pavo","Lechuga batavia","Miel mostaza","Maíz tierno","Tomate","Crutones","Tocineta"]},
+    {"nombre":"Ensalada Pollo BBQ","restaurante":"Qbano","ingredientes":["Pollo desmechado","Lechuga batavia","Salsa BBQ","Tomate","Queso mozzarella","Cebolla roja","Crutones"]},
+    {"nombre":"Ensalada Mediterránea","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Calamares","Pesto","Lechuga","Apio","Champiñones","Cebolla roja","Aceitunas negras","Vinagre balsámico","Aceite de oliva","Cebolla crocante"]},
+    {"nombre":"Ensalada Mediterránea Calamares","restaurante":"Crepes & Waffles","ingredientes":["Calamares","Pesto","Lechuga","Apio","Champiñones","Cebolla roja","Aceitunas negras","Vinagre balsámico","Aceite de oliva","Cebolla crocante"]},
+    {"nombre":"Ensalada Mediterránea Camarones","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Pesto","Lechuga","Apio","Champiñones","Cebolla roja","Aceitunas negras","Vinagre balsámico","Aceite de oliva","Cebolla crocante"]},
+    {"nombre":"Ensalada Florentina","restaurante":"Crepes & Waffles","ingredientes":["Mozzarella de búfala","Lechuga","Tomate seco","Tomate fresco","Champiñones","Pesto","Aguacate","Aceitunas negras","Vinagre balsámico","Aceite de oliva"]},
+    {"nombre":"Ensalada Thai","restaurante":"Crepes & Waffles","ingredientes":["Pechuga de pavo","Ajonjolí","Lechuga","Apio","Champiñones","Pimentón","Cebolla crocante","Vinagreta oriental"]},
+    {"nombre":"Ensalada Marroquí con Camarón","restaurante":"Crepes & Waffles","ingredientes":["Camarones","Couscous","Especias","Aguacate","Chutney de mango","Quinua tostada","Ensalada verde"]},
+    {"nombre":"Ensalada Pollo Marroquí","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Couscous","Especias","Aguacate","Chutney de mango","Quinua tostada","Ensalada verde"]},
+    {"nombre":"Ensalada César con Salmón","restaurante":"Crepes & Waffles","ingredientes":["Salmón","Lechuga romana","Aderezo césar","Crutones","Queso parmesano"]},
+    {"nombre":"Ensalada César con Pollo","restaurante":"Crepes & Waffles","ingredientes":["Pollo","Lechuga romana","Aderezo césar","Crutones","Queso parmesano"]},
+    {"nombre":"Ensalada César","restaurante":"Crepes & Waffles","ingredientes":["Lechuga romana","Aderezo césar","Crutones","Queso parmesano"]},
+    {"nombre":"Ensalada Valparaíso","restaurante":"Crepes & Waffles","ingredientes":["Salmón ahumado","Merkén","Quinua negra","Kale","Tomate","Aguacate"]},
+    {"nombre":"Ensalada Torina","restaurante":"Crepes & Waffles","ingredientes":["Mozzarella de búfala","Jamón serrano","Cebolla caramelizada","Lechuga","Vinagreta de mostaza Dijón"]},
+    {"nombre":"Tuna Salad","restaurante":"Crepes & Waffles","ingredientes":["Atún","Lechuga","Pepino","Champiñones","Apio","Aguacate","Tomate cherry","Aceitunas negras","Vinagreta de hierbas","Aceite de oliva"]},
+    {"nombre":"Ensalada Montes de María","restaurante":"Crepes & Waffles","ingredientes":["Frijoles rojos","Tofu","Tahini","Guacamole","Rúgula","Lentejas tostadas"]},
+    {"nombre":"Ensalada Mikonos","restaurante":"Crepes & Waffles","ingredientes":["Salmón ahumado","Lechuga","Rúgula","Queso feta","Aceitunas negras","Champiñones","Cebolla roja","Albahaca","Tomate cherry","Pepino","Vinagreta de hierbas","Aceite de oliva"]},
+    {"nombre":"Ensalada Portofino","restaurante":"Crepes & Waffles","ingredientes":["Queso feta","Tomate seco","Lechuga","Rúgula","Albahaca","Aceitunas negras","Tomate fresco","Tomate cherry","Champiñones","Cebolla","Pesto","Vinagreta de hierbas","Aceite de oliva"]}
+  ],
+  "Crepes Dulces": [
+    {"nombre":"Crepe Baby Doll","restaurante":"Crepes & Waffles","ingredientes":["Banano","Helado de vainilla","Nueces","Chocolate caliente","Crema chantilly"]},
+    {"nombre":"Crepe Cleopatra","restaurante":"Crepes & Waffles","ingredientes":["Banano","Fresa","Helado de mora","Crema chantilly","Salsa de frambuesa"]},
+    {"nombre":"Crepe Mont Blanc","restaurante":"Crepes & Waffles","ingredientes":["Chocolate blanco","Fresas","Crema chantilly"]},
+    {"nombre":"Crepe Chocolate Fondue","restaurante":"Crepes & Waffles","ingredientes":["Chocolate fondue","Fresas","Banano","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Crepe de Nutella","restaurante":"Crepes & Waffles","ingredientes":["Nutella"]},
+    {"nombre":"Crepe de Nutella y Banano","restaurante":"Crepes & Waffles","ingredientes":["Nutella","Banano"]},
+    {"nombre":"Crepe de Nutella y Fresas","restaurante":"Crepes & Waffles","ingredientes":["Nutella","Fresas"]}
+  ],
+  "Waffles": [
+    {"nombre":"Waffle Especial","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Helado","Crema chantilly","Salsas a elección"]},
+    {"nombre":"Waffle de Frutos del Bosque","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Frutos rojos","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Waffle de Mantequilla y Syrup","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Mantequilla","Syrup"]},
+    {"nombre":"Waffle de Arequipe","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Arequipe","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Waffle de Arequipe y Banano","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Banano","Arequipe","Chocolate","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Waffle de Nutella","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Nutella","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Waffle de Nutella y Banano","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Nutella","Banano","Crema chantilly","Helado de vainilla"]},
+    {"nombre":"Waffle D'Choclo","restaurante":"Crepes & Waffles","ingredientes":["Waffle de maíz","Queso mozzarella","Queso 7 cueros","Suero costeño"]},
+    {"nombre":"Waffle de Miel de Abejas","restaurante":"Crepes & Waffles","ingredientes":["Waffle","Mantequilla","Miel de abejas"]},
+    {"nombre":"Mini Waffles de Arequipe","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Arequipe","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Mini Waffles de Frutos del Bosque","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Frutos rojos","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Mini Waffles de Nutella","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Nutella","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Mini Waffles de Chocolate","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Chocolate","Helado de vainilla","Crema chantilly"]},
+    {"nombre":"Mini Waffle Tradicional","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Mantequilla","Syrup"]},
+    {"nombre":"Mini Waffles de Miel de Abejas","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle","Mantequilla","Miel de abejas"]},
+    {"nombre":"Mini Waffles D'Yuca","restaurante":"Crepes & Waffles","ingredientes":["Mini waffle de yuca","Mantequilla","Panela","Jalea de guayaba"]}
+  ],
+  "Helados y Copas": [
+    {"nombre":"Copa Tentación","restaurante":"Crepes & Waffles","ingredientes":["Bizcochuelo","Licor","Helado de vainilla","Helado de café","Helado de chocolate","Chocolate","Nueces","Crema chantilly"]},
+    {"nombre":"Copa Arequipe","restaurante":"Crepes & Waffles","ingredientes":["Helado de arequipe","Banano","Arequipe","Crema chantilly"]},
+    {"nombre":"Banana Split","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Helado de fresa","Helado de chocolate","Crema chantilly","Nueces","Banano","Barquillo","Chocolate","Arequipe"]},
+    {"nombre":"Copa Vainilla Hot Chocolate","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Almendras","Crema chantilly","Chocolate caliente"]},
+    {"nombre":"Copa Suprema","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Banano","Crema chantilly","Chocolate","Arequipe","Galleta","Nueces"]},
+    {"nombre":"Capricho de Maracuyá","restaurante":"Crepes & Waffles","ingredientes":["Helado de yogur de maracuyá","Maracuyá","Fresas","Melocotón","Galleta"]},
+    {"nombre":"Copa Alaska","restaurante":"Crepes & Waffles","ingredientes":["Profiteroles","Salsa inglesa","Helado de vainilla","Helado de mora","Salsa de frambuesa","Crema chantilly"]},
+    {"nombre":"Copa Dulce Encanto","restaurante":"Crepes & Waffles","ingredientes":["Bizcochuelo","Salsa inglesa","Arequipe","Helado de coco","Chocolate"]},
+    {"nombre":"Copa Dama Blanca","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Helado de chocolate","Chocolate","Nueces","Crema chantilly"]},
+    {"nombre":"Copa Vesubio","restaurante":"Crepes & Waffles","ingredientes":["Helado de fresa","Helado de vainilla","Helado de limón","Salsa de frambuesa","Crema chantilly"]},
+    {"nombre":"Copa Merengue Glazé","restaurante":"Crepes & Waffles","ingredientes":["Merengue","Helado de vainilla","Chocolate","Nueces","Crema chantilly"]},
+    {"nombre":"Copa Festival","restaurante":"Crepes & Waffles","ingredientes":["Helado de mora","Helado de fresa","Helado de feijoa","Helado de limón","Helado de vainilla","Banano","Fresas","Bizcochuelo","Salsa de frambuesa","Crema chantilly","Barquillo"]},
+    {"nombre":"Copa Melocotón","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Helado de yogur de maracuyá","Melocotón","Maracuyá","Crema chantilly","Galleta"]},
+    {"nombre":"Copa Brownie","restaurante":"Crepes & Waffles","ingredientes":["Helado de brownie","Caramelo","Chocolate"]},
+    {"nombre":"Copa Limeña","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Arequipe","Frutos rojos","Merengue","Guanábana"]},
+    {"nombre":"Copa Banana Royal","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Helado de chocolate","Fresa","Banano","Chocolate","Galleta","Crema chantilly"]},
+    {"nombre":"Filosofía Acaramelada","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Caramelo","Banano","Almendras"]},
+    {"nombre":"Tiramisú","restaurante":"Crepes & Waffles","ingredientes":["Helado de vainilla","Bizcochuelo","Cognac","Salsa inglesa","Chocolate","Café"]},
+    {"nombre":"Tarta de Chocolate y Fudge","restaurante":"Crepes & Waffles","ingredientes":["Helado de chocolate","Helado de café","Fudge de chocolate","Almendras","Crocante italiano"]}
+  ]
+};
+
+// ═══════════════════════════════════════════════════════════════
+// TAXONOMÍA DE INGREDIENTES
+// ═══════════════════════════════════════════════════════════════
+const INGREDIENT_TAXONOMY = {
+  "Aves": {
+    icon: "🐔",
+    keywords: ["pollo","pechuga de pollo","pollo apanado","pollo desmechado","pechuga de pollo desmechada","pavo","pechuga de pavo"]
+  },
+  "Res y Cerdo": {
+    icon: "🥩",
+    keywords: ["res","carne de res","carne de res desmechada","carne desmechada","carne boloñesa","roast beef","lomo de res","ternera","cerdo","costilla de cerdo","costilla desmechada","costilla de cerdo desmechada","cerdo desmechado","chorizo","chorizo de cerdo","chorizo argentino","tocineta","cordero","salchichón","jamonada","jamón","jamón ahumado","jamón serrano"]
+  },
+  "Mariscos": {
+    icon: "🦐",
+    keywords: ["camarones","calamares","palmitos de cangrejo","salmón","salmón ahumado","atún","pulpo","langostinos"]
+  },
+  "Verduras y Hojas": {
+    icon: "🥬",
+    keywords: ["lechuga","lechuga batavia","lechuga romana","lechuga hidropónica","rúgula","kale","espinaca","apio","brócoli","espárragos","alcachofa","calabacín","berenjena","pepino","germinados","puerro","cebollín","vegetales frescos","vegetales variados","ensalada verde","ensalada árabe","coleslaw"]
+  },
+  "Tomate y Cebolla": {
+    icon: "🍅",
+    keywords: ["tomate","tomate fresco","tomate cherry","tomate seco","tomate chonto","tomatillo verde","cebolla","cebolla roja","cebolla blanca","cebolla morada","cebolla caramelizada","cebolla asada","cebolla crocante","cebolla encurtida","hogao","pico de gallo"]
+  },
+  "Hongos": {
+    icon: "🍄",
+    keywords: ["champiñones","champiñones frescos","champiñones salteados","portobello","hongos variados","orellanas","huitlacoche"]
+  },
+  "Frutas": {
+    icon: "🍌",
+    keywords: ["banano","fresa","fresas","piña","piña asada","maracuyá","melocotón","limón","frutos rojos","guanábana","feijoa","cítricos","uvas pasas"]
+  },
+  "Aguacate": {
+    icon: "🥑",
+    keywords: ["aguacate","guacamole"]
+  },
+  "Quesos": {
+    icon: "🧀",
+    keywords: ["queso","queso mozzarella","queso cheddar","queso parmesano","queso azul","queso crema","queso feta","queso crema feta","queso amarillo","queso de cabra","queso costeño","queso holandés","queso ricotta","queso tipo sabana","queso 7 cueros","queso rallado","quesos variados","mozzarella","mozzarella de búfala","queso americano","queso crema de almendras","salsa de queso","salsa de queso cheddar"]
+  },
+  "Salsas": {
+    icon: "🫙",
+    keywords: ["salsa bbq","salsa qbano","salsa curry","salsa chipotle","salsa mexicana","salsa de la casa","salsa al ajillo","salsa stroganoff","salsa a la pimienta","salsa napolitana","salsa de champiñones","salsa de coco","salsa de tomate","salsa de frambuesa","salsa inglesa","salsa de jengibre","salsa criolla","salsa café de parís","salsa dijonnaise","chimichurri","aderezo césar","salsas a elección","pasta de tomate"]
+  },
+  "Aderezos y Untables": {
+    icon: "🥄",
+    keywords: ["mayonesa","mayonesa de chipotle","mayonesa chipotle","mayonesa de la casa","mayonesa de sriracha","mayonesa de pesto","mayonesa de pimentón","mayonesa de cerveza","mostaza","miel mostaza","pesto","crema agria","crema agria vegana","sour cream de jalapeño","vinagre balsámico","vinagreta de hierbas","vinagreta oriental","vinagreta de mostaza dijón","vinagreta marroquí","tahini","chutney de mango","mermelada de pimentón","aceite de oliva","aceite de trufa"]
+  },
+  "Granos y Cereales": {
+    icon: "🌾",
+    keywords: ["arroz","frijoles","frijoles negros","frijoles rojos","lentejas","lentejas tostadas","maíz","maíz tierno","maíz tostado","quinua negra","quinua tostada","couscous","tortilla mexicana","tortilla de maíz","crutones"]
+  },
+  "Condimentos y Especias": {
+    icon: "🌿",
+    keywords: ["cilantro","albahaca","curry","ají","ají panka","ají dulce","ají amarillo","chipotle","peperoncino","jalapeño","especias","especias árabes","merkén","ajonjolí","pimienta","semillas de mostaza","sal cítrica"]
+  },
+  "Panes y Bases": {
+    icon: "🍞",
+    keywords: ["pan brioche","pan ajonjolí","pan campesino","pan artesanal","pan pita","waffle","mini waffle","waffle de maíz","mini waffle de yuca"]
+  },
+  "Frutos Secos": {
+    icon: "🥜",
+    keywords: ["nueces","almendras","maní"]
+  },
+  "Dulces y Postres": {
+    icon: "🍫",
+    keywords: ["chocolate","chocolate caliente","chocolate blanco","chocolate fondue","fudge de chocolate","nutella","arequipe","helado","helado de vainilla","helado de chocolate","helado de café","helado de mora","helado de fresa","helado de arequipe","helado de limón","helado de brownie","helado de coco","helado de feijoa","helado de yogur de maracuyá","syrup","miel de abejas","miel","caramelo","crema chantilly","merengue","bizcochuelo","galleta","barquillo","profiteroles","panela","jalea de guayaba","crocante italiano","cognac","licor","café"]
+  },
+  "Lácteos y Otros": {
+    icon: "🥛",
+    keywords: ["mantequilla","huevo","suero costeño","aceitunas negras","aceitunas moradas","pepinillos","plátano","plátano maduro","zapallo","pimienta","tofu","proteína vegetal","coco crujiente"]
+  }
+};
+
+const RESTAURANT_TAGS = { "Qbano": "q", "Crepes & Waffles": "cw", "Chef Burger": "cb" };
+
+let activeCategory = null;
+let activeRestaurant = null;
+let searchQuery = "";
+let selectedIngredients = new Set();
+
+// Build ingredient index: ingredient name → count of recipes
+let ingredientIndex = {};    // normalized name → count
+let ingredientToRecipes = {}; // normalized name → Set of recipe indices
+let allRecipesFlat = [];
+
+function buildIngredientIndex() {
+  allRecipesFlat = [];
+  ingredientIndex = {};
+  ingredientToRecipes = {};
+
+  for (const [cat, recipes] of Object.entries(DATA)) {
+    for (const r of recipes) {
+      const idx = allRecipesFlat.length;
+      allRecipesFlat.push({ ...r, _cat: cat, _idx: idx });
+      for (const ing of r.ingredientes) {
+        const key = ing.toLowerCase();
+        if (!ingredientIndex[key]) {
+          ingredientIndex[key] = { display: ing, count: 0 };
+          ingredientToRecipes[key] = new Set();
+        }
+        ingredientIndex[key].count++;
+        ingredientToRecipes[key].add(idx);
+      }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+function init() {
+  buildIngredientIndex();
+  renderFilters();
+  renderSidebar();
+  render();
+
+  document.getElementById("search").addEventListener("input", e => {
+    searchQuery = e.target.value.toLowerCase().trim();
+    render();
+  });
+
+  window.addEventListener("scroll", () => {
+    document.getElementById("scrollTop").classList.toggle("visible", window.scrollY > 400);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FILTERS (top bar)
+// ═══════════════════════════════════════════════════════════════
+function renderFilters() {
+  const cats = Object.keys(DATA);
+  const restaurants = [...new Set(Object.values(DATA).flat().map(r => r.restaurante))];
+
+  let html = '<div class="filter-group">';
+  restaurants.forEach(r => {
+    html += `<button class="filter-btn tag-btn" data-tag="${r}" onclick="toggleRestaurant('${r}')">${r}</button>`;
+  });
+  html += '</div><div class="filter-divider"></div><div class="filter-group">';
+  cats.forEach(c => {
+    html += `<button class="filter-btn" data-cat="${c}" onclick="toggleCategory('${c}')">${c}</button>`;
+  });
+  html += '</div>';
+  document.getElementById("filters").innerHTML = html;
+}
+
+function toggleCategory(cat) {
+  activeCategory = activeCategory === cat ? null : cat;
+  updateFilterUI();
+  render();
+}
+
+function toggleRestaurant(r) {
+  activeRestaurant = activeRestaurant === r ? null : r;
+  updateFilterUI();
+  render();
+}
+
+function updateFilterUI() {
+  document.querySelectorAll("[data-cat]").forEach(b => b.classList.toggle("active", b.dataset.cat === activeCategory));
+  document.querySelectorAll("[data-tag]").forEach(b => b.classList.toggle("active", b.dataset.tag === activeRestaurant));
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SIDEBAR - Ingredient explorer
+// ═══════════════════════════════════════════════════════════════
+function renderSidebar() {
+  const container = document.getElementById("accordionContainer");
+  let html = "";
+
+  for (const [catName, catDef] of Object.entries(INGREDIENT_TAXONOMY)) {
+    // Find which ingredients in this category actually exist in the data
+    const found = [];
+    for (const kw of catDef.keywords) {
+      if (ingredientIndex[kw]) {
+        found.push({ key: kw, display: ingredientIndex[kw].display, count: ingredientIndex[kw].count });
+      }
+    }
+    if (found.length === 0) continue;
+
+    // Sort by count desc, then name
+    found.sort((a, b) => b.count - a.count || a.display.localeCompare(b.display));
+
+    const totalCount = found.reduce((s, f) => s + f.count, 0);
+
+    html += `<div class="accordion-section" data-accat="${catName}">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <div class="accordion-header-left">
+          <span class="icon">${catDef.icon}</span>
+          <span>${catName}</span>
+          <span class="count-badge">${found.length}</span>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="accordion-body">`;
+
+    for (const f of found) {
+      html += `<div class="ing-item" data-ing="${f.key}" onclick="toggleIngredient('${f.key.replace(/'/g, "\\'")}')">
+        <span>${f.display}</span>
+        <span class="ing-count">${f.count}</span>
+      </div>`;
+    }
+
+    html += `</div></div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function toggleAccordion(header) {
+  header.parentElement.classList.toggle("open");
+}
+
+function filterSidebarIngredients(query) {
+  query = query.toLowerCase().trim();
+  document.querySelectorAll(".accordion-section").forEach(section => {
+    let anyVisible = false;
+    section.querySelectorAll(".ing-item").forEach(item => {
+      const name = item.dataset.ing;
+      const visible = !query || name.includes(query);
+      item.style.display = visible ? "" : "none";
+      if (visible) anyVisible = true;
+    });
+    section.style.display = anyVisible ? "" : "none";
+    if (query && anyVisible) section.classList.add("open");
+  });
+}
+
+function toggleIngredient(ingKey) {
+  if (selectedIngredients.has(ingKey)) {
+    selectedIngredients.delete(ingKey);
+  } else {
+    selectedIngredients.add(ingKey);
+  }
+  updateIngredientUI();
+  render();
+}
+
+function clearAllIngredients() {
+  selectedIngredients.clear();
+  updateIngredientUI();
+  render();
+}
+
+function updateIngredientUI() {
+  // Update sidebar items
+  document.querySelectorAll(".ing-item").forEach(item => {
+    item.classList.toggle("selected", selectedIngredients.has(item.dataset.ing));
+  });
+
+  // Update selected bar
+  const bar = document.getElementById("selectedBar");
+  if (selectedIngredients.size === 0) {
+    bar.classList.remove("visible");
+    bar.innerHTML = "";
+    return;
+  }
+
+  bar.classList.add("visible");
+  let html = '<span class="label">Filtro:</span>';
+  for (const key of selectedIngredients) {
+    const display = ingredientIndex[key]?.display || key;
+    html += `<span class="selected-ing-pill" onclick="toggleIngredient('${key.replace(/'/g, "\\'")}')">
+      ${display}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </span>`;
+  }
+  html += `<button class="clear-all-ing" onclick="clearAllIngredients()">Limpiar todo</button>`;
+  bar.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MOBILE SIDEBAR
+// ═══════════════════════════════════════════════════════════════
+function toggleMobileSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+  const btn = document.getElementById("btnIngToggle");
+  const isOpen = sidebar.classList.toggle("mobile-open");
+  overlay.classList.toggle("visible", isOpen);
+  btn.classList.toggle("active", isOpen);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RENDER RECIPES
+// ═══════════════════════════════════════════════════════════════
+function matchesSearch(recipe) {
+  if (!searchQuery) return true;
+  const haystack = (recipe.nombre + " " + recipe.ingredientes.join(" ")).toLowerCase();
+  return searchQuery.split(/\s+/).every(word => haystack.includes(word));
+}
+
+function matchesIngredientFilter(recipe) {
+  if (selectedIngredients.size === 0) return true;
+  const recipeIngs = new Set(recipe.ingredientes.map(i => i.toLowerCase()));
+  for (const sel of selectedIngredients) {
+    if (!recipeIngs.has(sel)) return false;
+  }
+  return true;
+}
+
+function render() {
+  let html = "";
+  let totalShown = 0;
+  let totalAll = 0;
+
+  for (const [cat, recipes] of Object.entries(DATA)) {
+    totalAll += recipes.length;
+    if (activeCategory && activeCategory !== cat) continue;
+
+    const filtered = recipes.filter(r => {
+      if (activeRestaurant && r.restaurante !== activeRestaurant) return false;
+      if (!matchesSearch(r)) return false;
+      if (!matchesIngredientFilter(r)) return false;
+      return true;
+    });
+
+    if (filtered.length === 0) continue;
+    totalShown += filtered.length;
+
+    html += `<section class="category">
+      <div class="category-header">
+        <h2 class="category-name">${cat}</h2>
+        <span class="category-count">${filtered.length} receta${filtered.length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="recipes-grid">`;
+
+    filtered.forEach((r, i) => {
+      const tagClass = "tag-" + RESTAURANT_TAGS[r.restaurante];
+      const preview = r.ingredientes.slice(0, 4).join(" \u00B7 ");
+
+      html += `<div class="recipe-card" onclick="this.classList.toggle('expanded')">
+        <span class="tag ${tagClass}">${r.restaurante}</span>
+        <div class="recipe-name">${highlightSearch(r.nombre)}</div>
+        <div class="ingredients-preview">${highlightSearch(preview)}${r.ingredientes.length > 4 ? '...' : ''}</div>
+        <div class="ingredient-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          ${r.ingredientes.length} ingredientes
+        </div>
+        <div class="ingredients-full">
+          <ul>${r.ingredientes.map(ing => {
+            const isHighlighted = selectedIngredients.has(ing.toLowerCase());
+            return `<li class="${isHighlighted ? 'highlighted' : ''}">${highlightSearch(ing)}</li>`;
+          }).join("")}</ul>
+        </div>
+      </div>`;
+    });
+
+    html += `</div></section>`;
+  }
+
+  if (totalShown === 0) {
+    html = `<div class="empty">
+      <div class="empty-icon">:/</div>
+      <h3>No se encontraron recetas</h3>
+      <p>Intenta con otra b\u00FAsqueda o quita los filtros</p>
+    </div>`;
+  }
+
+  document.getElementById("main").innerHTML = html;
+  document.getElementById("stats").innerHTML = `<b>${totalShown}</b> de ${totalAll} recetas`;
+}
+
+function highlightSearch(text) {
+  if (!searchQuery) return text;
+  const words = searchQuery.split(/\s+/).filter(Boolean);
+  let result = text;
+  words.forEach(word => {
+    const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    result = result.replace(regex, '<mark style="background:#FEF08A;padding:0 2px;border-radius:3px">$1</mark>');
+  });
+  return result;
+}
+
+init();
+</script>
+
+</body>
+</html>
